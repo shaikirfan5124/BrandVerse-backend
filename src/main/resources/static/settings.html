@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="container">
+
+    <h1>&#9881;&#65039; Settings</h1>
+
+    <!-- Appearance -->
+    <div class="setting-card">
+
+        <h2>&#127912; Appearance</h2>
+
+        <label>
+            <input type="radio" name="theme" value="light" checked>
+            Light Mode
+        </label>
+
+        <label>
+            <input type="radio" name="theme" value="dark">
+            Dark Mode
+        </label>
+
+    </div>
+
+    <!-- Language -->
+    <div class="setting-card">
+
+        <h2>&#127760; Language</h2>
+
+        <select id="language" onchange="changeLanguage(this.value)">
+
+            <option value="English">🇬🇧 English</option>
+
+            <option value="Telugu">🇮🇳 తెలుగు</option>
+
+            <option value="Hindi">🇮🇳 हिन्दी</option>
+
+            <option value="Kannada">🇮🇳 ಕನ್ನಡ</option>
+
+            <option value="Tamil">🇮🇳 தமிழ்</option>
+
+            <option value="Malayalam">🇮🇳 മലയാളം</option>
+
+        </select>
+
+    </div>
+
+    <!-- Notifications -->
+    <div class="setting-card">
+
+        <h2>&#128276; Notifications</h2>
+
+        <label class="switch">
+
+            <input type="checkbox" id="notificationToggle" checked>
+
+            <span class="slider"></span>
+
+        </label>
+
+    </div>
+
+    <!-- Data -->
+    <div class="setting-card">
+
+        <h2>&#128450;&#65039; Data</h2>
+
+        <button onclick="clearHistory()">
+            Clear History
+        </button>
+
+        <button onclick="clearSearchHistory()">
+            Clear Search History
+        </button>
+
+        <button onclick="clearFavorites()">
+            Clear Favorites
+        </button>
+
+        <button onclick="clearAllData()">
+            Clear All Data
+        </button>
+
+    </div>
+</div>
+
+    <script>
+
+        // ===============================
+        // Load Saved Settings
+        // ===============================
+
+        window.onload = function () {
+
+            // Theme
+            let savedTheme = localStorage.getItem("theme") || "light";
+
+            document.querySelector(`input[value="${savedTheme}"]`).checked = true;
+
+            applyTheme(savedTheme);
+
+            // Language
+            language.value = localStorage.getItem("language") || "English";
+
+            // Notifications
+            notificationToggle.checked =
+                localStorage.getItem("notifications") !== "false";
+
+            // Privacy
+            historyToggle.checked =
+                localStorage.getItem("saveHistory") !== "false";
+
+            searchToggle.checked =
+                localStorage.getItem("saveSearch") !== "false";
+
+            favoriteToggle.checked =
+                localStorage.getItem("saveFavorites") !== "false";
+
+        };
+
+
+        // ===============================
+        // Theme
+        // ===============================
+
+        // ===============================
+        // Theme
+        // ===============================
+
+        const themeRadios = document.querySelectorAll("input[name='theme']");
+
+        // Load Saved Theme
+        const savedTheme = localStorage.getItem("theme") || "light";
+
+        themeRadios.forEach(radio => {
+
+            if(radio.value === savedTheme){
+
+                radio.checked = true;
+
+            }
+
+        });
+
+        applyTheme(savedTheme);
+
+        // Save Theme
+        themeRadios.forEach(radio => {
+
+            radio.addEventListener("change", function(){
+
+                localStorage.setItem("theme", this.value);
+
+                applyTheme(this.value);
+
+            });
+
+        });
+
+        // Apply Theme Function
+        function applyTheme(theme){
+
+            if(theme === "dark"){
+
+                document.body.classList.add("dark-mode");
+
+            }
+
+            else{
+
+                document.body.classList.remove("dark-mode");
+
+            }
+
+        }
+
+        // ===============================
+        // Language
+        // ===============================
+
+        const language = document.getElementById("language");
+
+        // Load Saved Language
+        const savedLanguage =
+            localStorage.getItem("language") || "English";
+
+        language.value = savedLanguage;
+
+        // Save & Apply Language
+        language.addEventListener("change", function () {
+
+            localStorage.setItem("language", this.value);
+
+            if(typeof changeLanguage === "function"){
+
+                changeLanguage(this.value);
+
+            }
+
+        });
+
+
+        // ===============================
+        // Notifications
+        // ===============================
+
+        const notificationToggle =
+            document.getElementById("notificationToggle");
+
+        // Load Saved Notification Setting
+        notificationToggle.checked =
+            localStorage.getItem("notifications") !== "false";
+
+        // Save Notification Setting
+        notificationToggle.onchange = function(){
+
+            localStorage.setItem(
+                "notifications",
+                this.checked
+            );
+
+        };
+
+
+
+        // ===============================
+        // Data
+        // ===============================
+
+        function clearHistory(){
+
+            localStorage.removeItem("history");
+
+            alert("History Cleared");
+
+        }
+
+        function clearSearchHistory(){
+
+            localStorage.removeItem("searchHistory");
+
+            alert("Search History Cleared");
+
+        }
+
+        function clearFavorites(){
+
+            localStorage.removeItem("favorites");
+
+            alert("Favorites Cleared");
+
+        }
+
+        function clearAllData(){
+
+            if(confirm("Clear all website data?")){
+
+                localStorage.clear();
+
+                location.reload();
+
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>

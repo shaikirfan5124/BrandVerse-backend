@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fashion Brands</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="fashion-header">
+    <h1>Fashion Brands</h1>
+</div>
+
+<!-- brand box -->
+<div class="brands-header"></div>
+
+<button class="gohome-btn"
+        onclick="window.location.href='index.html'">
+    &#127968; Home
+</button>
+
+
+
+<div class="brand-container">
+
+
+    <!-- Zara -->
+    <!-- Zara -->
+    <div class="brand-box"
+         onclick="openBrand('Zara','images/zara.png','https://www.zara.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(
+        event,
+        'Zara',
+        'images/zara.png',
+        'https://www.zara.com'
+    )">
+        </button>
+
+        <img src="images/zara.png" alt="Zara">
+
+        <h3>Zara</h3>
+
+    </div>
+
+
+    <!-- H&M -->
+    <div class="brand-box"
+         onclick="openBrand('H&M','images/hm.png','https://www.hm.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'H&M','images/hm.png','https://www.hm.com')">
+
+        </button>
+
+        <img src="images/hm.png" alt="H&M">
+        <h3>H&M</h3>
+
+    </div>
+
+    <!-- Nike -->
+    <div class="brand-box"
+         onclick="openBrand('Nike','images/nike.png','https://www.nike.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Nike','images/nike.png','https://www.nike.com')">
+
+        </button>
+
+        <img src="images/nike.png" alt="Nike">
+        <h3>Nike</h3>
+
+    </div>
+
+    <!-- Adidas -->
+    <div class="brand-box"
+         onclick="openBrand('Adidas','images/adidas.png','https://www.adidas.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Adidas','images/adidas.png','https://www.adidas.com')">
+
+        </button>
+
+        <img src="images/adidas.png" alt="Adidas">
+        <h3>Adidas</h3>
+
+    </div>
+
+    <!-- Puma -->
+    <div class="brand-box"
+         onclick="openBrand('Puma','images/puma.png','https://in.puma.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Puma','images/puma.png','https://in.puma.com')">
+
+        </button>
+
+        <img src="images/puma.png" alt="Puma">
+        <h3>Puma</h3>
+
+    </div>
+
+    <!-- Uniqlo -->
+    <div class="brand-box"
+         onclick="openBrand('Uniqlo','images/uniqlo.png','https://www.uniqlo.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Uniqlo','images/uniqlo.png','https://www.uniqlo.com')">
+
+        </button>
+
+        <img src="images/uniqlo.png" alt="Uniqlo">
+        <h3>Uniqlo</h3>
+
+    </div>
+
+    <!-- Levi's -->
+    <div class="brand-box"
+         onclick="openBrand('Levis','images/levis.png','https://www.levi.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Levis','images/levis.png','https://www.levi.com')">
+
+        </button>
+
+        <img src="images/levis.png" alt="Levi's">
+        <h3>Levi's</h3>
+
+    </div>
+
+    <!-- Tommy Hilfiger -->
+    <div class="brand-box"
+         onclick="openBrand('Tommy Hilfiger','images/tommy-hilfiger.png','https://usa.tommy.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Tommy Hilfiger','images/tommy-hilfiger.png','https://usa.tommy.com')">
+
+        </button>
+
+        <img src="images/tommy-hilfiger.png" alt="Tommy Hilfiger">
+        <h3>Tommy Hilfiger</h3>
+
+    </div>
+
+    <!-- Calvin Klein -->
+    <div class="brand-box"
+         onclick="openBrand('Calvin Klein','images/calvin-klein.png','https://www.calvinklein.us')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Calvin Klein','images/calvin-klein.png','https://www.calvinklein.us')">
+
+        </button>
+
+        <img src="images/calvin-klein.png" alt="Calvin Klein">
+        <h3>Calvin Klein</h3>
+
+    </div>
+
+    <!-- Under Armour -->
+    <div class="brand-box"
+         onclick="openBrand('Under Armour','images/under-armour.png','https://www.underarmour.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Under Armour','images/under-armour.png','https://www.underarmour.com')">
+
+        </button>
+
+        <img src="images/under-armour.png" alt="Under Armour">
+        <h3>Under Armour</h3>
+
+    </div>
+
+    <!-- Allen Solly -->
+    <div class="brand-box"
+         onclick="openBrand('Allen Solly','images/allen-solly.png','https://www.allensolly.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Allen Solly','images/allen-solly.png','https://www.allensolly.com')">
+
+        </button>
+
+        <img src="images/allen-solly.png" alt="Allen Solly">
+        <h3>Allen Solly</h3>
+
+    </div>
+
+    <!-- Louis Philippe -->
+    <div class="brand-box"
+         onclick="openBrand('Louis Philippe','images/louis-philippe.png','https://www.louisphilippe.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Louis Philippe','images/louis-philippe.png','https://www.louisphilippe.com')">
+
+        </button>
+
+        <img src="images/louis-philippe.png" alt="Louis Philippe">
+        <h3>Louis Philippe</h3>
+
+    </div>
+
+    <!-- Van Heusen -->
+    <div class="brand-box"
+         onclick="openBrand('Van Heusen','images/van-heusen.png','https://www.vanheusenindia.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Van Heusen','images/van-heusen.png','https://www.vanheusenindia.com')">
+
+        </button>
+
+        <img src="images/van-heusen.png" alt="Van Heusen">
+        <h3>Van Heusen</h3>
+
+    </div>
+
+    <!-- Peter England -->
+    <div class="brand-box"
+         onclick="openBrand('Peter England','images/peter-england.png','https://www.peterengland.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Peter England','images/peter-england.png','https://www.peterengland.com')">
+
+        </button>
+
+        <img src="images/peter-england.png" alt="Peter England">
+        <h3>Peter England</h3>
+
+    </div>
+
+    <!-- Mufti -->
+    <div class="brand-box"
+         onclick="openBrand('Mufti','images/mufti.png','https://www.muftijeans.in')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Mufti','images/mufti.png','https://www.muftijeans.in')">
+
+        </button>
+
+        <img src="images/mufti.png" alt="Mufti">
+        <h3>Mufti</h3>
+
+    </div>
+
+    <!-- Wrogn -->
+    <div class="brand-box"
+         onclick="openBrand('Wrogn','images/wrogn.png','https://www.wrogn.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Wrogn','images/wrogn.png','https://www.wrogn.com')">
+
+        </button>
+
+        <img src="images/wrogn.png" alt="Wrogn">
+        <h3>Wrogn</h3>
+
+    </div>
+
+    <!-- Flying Machine -->
+    <div class="brand-box"
+         onclick="openBrand('Flying Machine','images/flying-machine.png','https://www.flyingmachine.in')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Flying Machine','images/flying-machine.png','https://www.flyingmachine.in')">
+
+        </button>
+
+        <img src="images/flying-machine.png" alt="Flying Machine">
+        <h3>Flying Machine</h3>
+
+    </div>
+
+    <!-- Spykar -->
+    <div class="brand-box"
+         onclick="openBrand('Spykar','images/spykar.png','https://www.spykar.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Spykar','images/spykar.png','https://www.spykar.com')">
+
+        </button>
+
+        <img src="images/spykar.png" alt="Spykar">
+        <h3>Spykar</h3>
+
+    </div>
+
+    <!-- Roadster -->
+    <div class="brand-box"
+         onclick="openBrand('Roadster','images/roadster.png','https://www.roadsterbrand.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Roadster','images/roadster.png','https://www.roadsterbrand.com')">
+
+        </button>
+
+        <img src="images/roadster.png" alt="Roadster">
+        <h3>Roadster</h3>
+
+    </div>
+
+    <!-- Highlander -->
+    <div class="brand-box"
+         onclick="openBrand('Highlander','images/highlander.png','https://www.highlanderfashion.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Highlander','images/highlander.png','https://www.highlanderfashion.com')">
+
+        </button>
+
+        <img src="images/highlander.png" alt="Highlander">
+        <h3>Highlander</h3>
+
+    </div>
+
+    <!-- Biba -->
+    <div class="brand-box"
+         onclick="openBrand('Biba','images/biba.png','https://www.biba.in')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Biba','images/biba.png','https://www.biba.in')">
+
+        </button>
+
+        <img src="images/biba.png" alt="Biba">
+        <h3>Biba</h3>
+
+    </div>
+
+    <!-- W -->
+    <div class="brand-box"
+         onclick="openBrand('W','images/w.png','https://www.wforwoman.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'W','images/w.png','https://www.wforwoman.com')">
+
+        </button>
+
+        <img src="images/w.png" alt="W">
+        <h3>W</h3>
+
+    </div>
+
+    <!-- Libas -->
+    <div class="brand-box"
+         onclick="openBrand('Libas','images/libas.png','https://www.libas.in')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Libas','images/libas.png','https://www.libas.in')">
+
+        </button>
+
+        <img src="images/libas.png" alt="Libas">
+        <h3>Libas</h3>
+
+    </div>
+
+    <!-- Aurelia -->
+    <div class="brand-box"
+         onclick="openBrand('Aurelia','images/aurelia.png','https://www.aureliawomen.com')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Aurelia','images/aurelia.png','https://www.aureliawomen.com')">
+
+        </button>
+
+        <img src="images/aurelia.png" alt="Aurelia">
+        <h3>Aurelia</h3>
+
+    </div>
+
+    <!-- Global Desi -->
+    <div class="brand-box"
+         onclick="openBrand('Global Desi','images/globaldesi.png','https://www.globaldesi.in')">
+
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Global Desi','images/globaldesi.png','https://www.globaldesi.in')">
+
+        </button>
+
+        <img src="images/globaldesi.png" alt="Global Desi">
+        <h3>Global Desi</h3>
+
+    </div>
+
+</div>
+
+    <!-- web page -->
+    <!-- Website Viewer -->
+    <div id="website-container" style="display:none;"></div>
+
+        <div class="top-buttons"></div>
+
+            <div class="left-buttons"></div>
+
+
+
+        <div id="toast"></div>
+
+        <script>
+            // ======================================
+            // ❤️ Add / Remove Favorite
+            // ======================================
+
+            function addFavorite(event, name, image, link) {
+
+                event.stopPropagation();
+
+                const button = event.target;
+                const userId = localStorage.getItem("userId");
+
+                // Check Login
+                if (!userId) {
+                    alert("Please Login First!");
+                    return;
+                }
+
+                // ============================
+                // Remove Favorite
+                // ============================
+// Remove Favourite
+                if(button.classList.contains("active")){
+
+                    const favoriteId = button.dataset.favoriteId;
+
+                    fetch("http://localhost:8080/api/favorites/" + favoriteId,{
+
+                        method:"DELETE"
+
+                    })
+
+                        .then(response=>{
+
+                            if(!response.ok){
+
+                                throw new Error("Delete Failed");
+
+                            }
+
+                            button.classList.remove("active");
+
+                            delete button.dataset.favoriteId;
+
+                            showMessage(name + " removed from Favorites 💔");
+
+                        })
+
+                        .catch(error=>console.log(error));
+
+                    return;
+                }
+
+
+                // ============================
+                // Add Favorite
+                // ============================
+                fetch("http://localhost:8080/api/favorites", {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        userId: userId,
+                        brandName: name,
+                        image: image,
+                        website: link
+
+                    })
+
+                })
+
+                    .then(response => {
+
+                        if (!response.ok) throw new Error("Add Failed");
+
+                        return response.json();
+
+                    })
+
+                    .then(data => {
+
+                        button.classList.add("active");
+
+                        button.dataset.favoriteId = data.id;
+
+                        showMessage(name + " added to Favorites ❤️");
+
+                    })
+
+                    .catch(error => console.log(error));
+
+            }
+            // ======================================
+            // Toast Message
+            // ======================================
+
+            function showMessage(message){
+
+                const toast = document.getElementById("toast");
+
+                toast.textContent = message;
+
+                toast.classList.add("show");
+
+                setTimeout(() => {
+
+                    toast.classList.remove("show");
+
+                },2000);
+
+            }
+
+
+
+        </script>
+
+
+
+        <script>
+
+            // ======================================
+            // Load Favorite Hearts
+            // ======================================
+
+            window.addEventListener("load", () => {
+
+                const userId = localStorage.getItem("userId");
+
+                if (!userId) return;
+
+                fetch("http://localhost:8080/api/favorites/" + userId)
+
+                    .then(response => response.json())
+
+                    .then(favorites => {
+
+                        document.querySelectorAll(".heart-btn").forEach(btn => {
+
+                            const brandBox = btn.closest(".brand-box");
+
+                            const brandName = brandBox.querySelector("h3").innerText;
+
+                            const fav = favorites.find(f => f.brandName === brandName);
+
+                            if(fav){
+
+                                btn.classList.add("active");
+
+                                // Save database ID on button
+                                btn.dataset.favoriteId = fav.id;
+
+                            }
+
+                        });
+
+                    });
+
+            });
+        </script>
+
+
+
+<script>
+
+    // ======================================
+    // Save History to MySQL
+    // ======================================
+
+    function saveHistory(name, image, website){
+
+        const userId = localStorage.getItem("userId");
+
+        if(!userId){
+            return;
+        }
+
+        const now = new Date();
+
+        fetch("http://localhost:8080/api/history",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                userId:Number(userId),
+                brandName:name,
+                image:image,
+                website:website,
+                visitDate:now.toLocaleDateString(),
+                visitTime:now.toLocaleTimeString()
+            })
+        })
+            .then(async response => {
+
+                const text = await response.text();
+
+                console.log("Status:", response.status);
+                console.log("Response:", text);
+
+                if(!response.ok){
+                    alert("History Save Failed");
+                }else{
+                    console.log("History Saved Successfully");
+                }
+
+            })
+            .catch(error => {
+
+                console.error(error);
+
+            });
+
+    }
+
+    // ======================================
+    // Open Brand
+    // ======================================
+
+    function openBrand(name, image, website){
+
+        console.log("openBrand called");
+
+        saveHistory(name, image, website);
+
+        window.location.href = website;
+
+    }
+
+</script>
+
+        <script>
+
+            // Apply Theme on Page Load
+
+            window.onload = function(){
+
+                const theme = localStorage.getItem("theme");
+
+                if(theme === "dark"){
+
+                    document.body.classList.add("dark-mode");
+
+                }
+
+            };
+
+        </script>
+
+</body>
+</html>
+

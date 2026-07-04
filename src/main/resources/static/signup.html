@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Brand Universe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="signup-box">
+    <h2>Create Account</h2>
+
+    <form id="signupForm">
+
+        <input type="text" id="fullname" placeholder="Full Name" required>
+
+        <input type="email" id="email" placeholder="Email Address" required>
+
+        <input type="password" id="password" placeholder="Password" required>
+
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+        <button type="submit">Sign Up</button>
+
+        <p>Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+
+    </form>
+
+</div>
+
+
+<script>
+
+    // Signup Form Submit
+    document.getElementById("signupForm").addEventListener("submit", async function(event){
+
+        event.preventDefault();
+
+        const user = {
+            fullName: document.getElementById("fullname").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
+        };
+
+        const response = await fetch("http://localhost:8080/api/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(user)
+        });
+
+        if(response.ok){
+            alert("Signup Successful!");
+            window.location.href = "login.html";
+        }else{
+            alert("Signup Failed!");
+        }
+    });
+
+</script>
+
+<script>
+
+    // Apply Theme on Page Load
+
+    window.onload = function(){
+
+        const theme = localStorage.getItem("theme");
+
+        if(theme === "dark"){
+
+            document.body.classList.add("dark-mode");
+
+        }
+
+    };
+
+</script>
+
+</body>
+</html>

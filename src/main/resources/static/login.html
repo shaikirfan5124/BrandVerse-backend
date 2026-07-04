@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Brand Universe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="login-box">
+    <h2>Login</h2>
+
+    <form id="loginForm">
+
+        <input type="email" id="email" placeholder="Email Address" required>
+
+        <input type="password" id="password" placeholder="Password" required>
+
+        <button type="submit">Login</button>
+
+        <p><a href="#">Forgot Password?</a></p>
+
+        <p>Don't have an account?
+            <a href="signup.html">Sign Up</a>
+        </p>
+
+    </form>
+</div>
+
+<script>
+
+    // Login Form Submit
+    document.getElementById("loginForm").addEventListener("submit", async function(event){
+
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const loginData = {
+            email: email,
+            password: password
+        };
+
+        try{
+
+            const response = await fetch("http://localhost:8080/api/login",{
+
+                method:"POST",
+
+                headers:{
+                    "Content-Type":"application/json"
+                },
+
+                body:JSON.stringify(loginData)
+
+            });
+
+            if(response.ok){
+
+                const user = await response.json();
+
+                console.log("User Object:", user);
+                console.log("User ID:", user.id);
+
+                // Save logged-in user
+                localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+                // Save user ID
+                localStorage.setItem("userId", user.id);
+
+                // Save user name
+                localStorage.setItem("userName", user.fullName);
+
+                console.log("User Saved:", user);
+
+                window.location.href = "index.html";
+
+            }else{
+
+                console.log("Invalid Email or Password");
+
+            }
+
+        }catch(error){
+
+            console.log(error);
+
+            alert("Server Error!");
+
+        }
+
+    });
+
+</script>
+
+<script>
+
+    // Apply Theme on Page Load
+
+    window.onload = function(){
+
+        const theme = localStorage.getItem("theme");
+
+        if(theme === "dark"){
+
+            document.body.classList.add("dark-mode");
+
+        }
+
+    };;
+
+</script>
+
+</body>
+</html>

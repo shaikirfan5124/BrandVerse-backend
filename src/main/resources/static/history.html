@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>History | BrandVerse</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- History Page -->
+
+<div class="history-container">
+
+    <!-- Page Heading -->
+
+    <h1 class="history-title">
+        Recently Viewed
+    </h1>
+
+
+    <!-- Search Box -->
+
+    <div class="history-search">
+
+        <input
+                type="text"
+                id="searchInput"
+                placeholder="&#128269; Search History..."
+                onkeyup="searchHistory()"
+        >
+
+    </div>
+
+
+    <!-- History Cards -->
+
+    <div id="historyList">
+
+        <!-- Cards will be loaded by JavaScript -->
+
+    </div>
+
+
+    <!-- Clear History Button -->
+
+    <div class="clear-history">
+
+        <button
+                class="clear-btn"
+                onclick="clearHistory()"
+        >
+
+            &#128465;&#65039; Clear History
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    // ======================================
+    // History (MySQL)
+    // ======================================
+
+    const historyList = document.getElementById("historyList");
+    const userId = localStorage.getItem("userId");
+
+    // ===========================
+    // Check Login
+    // ===========================
+
+    if(!userId){
+
+        historyList.innerHTML = `
+        <div class="empty-history">
+            Please Login First
+        </div>
+    `;
+
+    }else{
+
+        loadHistory();
+
+    }
+
+
+    // ===========================
+    // Load History
+    // ===========================
+
+    function loadHistory(){
+
+        fetch("http://localhost:8080/api/history/" + userId)
+
+            .then(response => {
+
+                if(!response.ok){
+
+                    throw new Error("Unable to load history");
+
+                }
+
+                return response.json();
+
+            })
+
+            .then(history => {
+
+                // ======================================
+                // Show Latest Viewed Brand First
+                // ======================================
+                history.sort((a, b) => b.id - a.id);
+
+                historyList.innerHTML = "";
+
+                // ======================================
+                // No History Found
+                // ======================================
+                if(history.length === 0){
+
+                    historyList.innerHTML = `
+                <div class="empty-history">
+                    No Recently Viewed Brands
+                </div>
+            `;
+
+                    return;
+
+                }
+
+                history.forEach(item => {
+
+                    historyList.innerHTML += `
+
+<div class="history-card">
+
+<div class="history-left">
+
+<img
+src="${item.image}"
+class="history-logo"
+>
+
+<div class="history-info">
+
+<h2>${item.brandName}</h2>
+
+<p>Date : ${item.visitDate}</p>
+
+<p>Time : ${item.visitTime}</p>
+
+</div>
+
+</div>
+
+<div class="history-buttons">
+
+<button
+class="visit-btn"
+onclick="window.open('${item.website}','_blank')">
+
+Visit Again
+
+</button>
+
+<button
+class="remove-btn"
+onclick="removeHistory(${item.id})">
+
+Remove
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+                });
+
+            })
+
+            .catch(error => {
+
+                console.log(error);
+
+                historyList.innerHTML = `
+            <div class="empty-history">
+                Unable to load history.
+            </div>
+        `;
+
+            });
+
+    }
+
+
+    // ===========================
+    // Search History
+    // ===========================
+
+    function searchHistory(){
+
+        let value = document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase();
+
+        let cards = document
+            .querySelectorAll(".history-card");
+
+        cards.forEach(card => {
+
+            let name = card
+                .querySelector("h2")
+                .innerText
+                .toLowerCase();
+
+            if(name.includes(value)){
+
+                card.style.display = "flex";
+
+            }else{
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+
+    // ===========================
+    // Remove One History
+    // ===========================
+
+    function removeHistory(id){
+
+        fetch("http://localhost:8080/api/history/" + id,{
+
+            method:"DELETE"
+
+        })
+
+            .then(response=>{
+
+                if(response.ok){
+
+                    loadHistory();
+
+                }else{
+
+                    alert("Delete Failed");
+
+                }
+
+            })
+
+            .catch(error=>{
+
+                console.log(error);
+
+            });
+
+    }
+
+
+    // ===========================
+    // Clear All History
+    // ===========================
+
+    function clearHistory(){
+
+        if(confirm("Clear all history?")){
+
+            fetch("http://localhost:8080/api/history/clear/" + userId,{
+
+                method:"DELETE"
+
+            })
+
+                .then(response=>{
+
+                    if(response.ok){
+
+                        loadHistory();
+
+                    }else{
+
+                        alert("Unable to clear history");
+
+                    }
+
+                })
+
+                .catch(error=>{
+
+                    console.log(error);
+
+                });
+
+        }
+
+    }
+
+</script>
+
+<script>
+
+    // Apply Theme on Page Load
+
+    window.onload = function(){
+
+        const theme = localStorage.getItem("theme");
+
+        if(theme === "dark"){
+
+            document.body.classList.add("dark-mode");
+
+        }
+
+    };
+
+</script>
+
+</body>
+
+</html>

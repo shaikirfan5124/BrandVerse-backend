@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favorite Brands</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="fashion-header">
+    <h1>&#10084;&#65039; Favorite Brands</h1>
+</div>
+
+<!-- brand box -->
+<div class="brands-header"></div>
+
+<button class="gohome-btn"
+        onclick="window.location.href='index.html'">
+    &#127968; Home
+</button>
+
+</div>
+
+
+
+<div id="favoritesContainer"></div>
+
+<script>
+
+    // ======================================
+    // ❤️ Favorite Brands (MySQL)
+    // ======================================
+
+    const container = document.getElementById("favoritesContainer");
+    const userId = localStorage.getItem("userId");
+
+    if (!userId) {
+
+        container.innerHTML = `
+        <h2 style="text-align:center;margin-top:80px;">
+            &#128274; Please Login First
+        </h2>
+    `;
+
+    } else {
+
+        loadFavorites();
+
+    }
+
+    // ======================================
+    // Load Favorites
+    // ======================================
+
+    function loadFavorites() {
+
+        fetch("http://localhost:8080/api/favorites/" + userId)
+
+            .then(response => {
+
+                if (!response.ok) {
+
+                    throw new Error("Unable to load favorites");
+
+                }
+
+                return response.json();
+
+            })
+
+            .then(favorites => {
+
+                container.innerHTML = "";
+
+                if (favorites.length === 0) {
+
+                    container.innerHTML =
+                        "<h2>No Favorite Brands Yet &#10084;&#65039;</h2>";
+
+                    return;
+
+                }
+
+                favorites.forEach(brand => {
+
+                    container.innerHTML += `
+
+            <div class="brand-box">
+
+                <img src="${brand.image}" alt="${brand.brandName}">
+
+                <h3>${brand.brandName}</h3>
+
+                <button onclick="removeFavorite(${brand.id})">
+                    Remove
+                </button>
+
+                <button onclick="openBrand('${brand.website}')">
+                    Visit Brand
+                </button>
+
+            </div>
+
+            `;
+
+                });
+
+            })
+
+            .catch(error => {
+
+                console.error(error);
+
+                container.innerHTML =
+                    "<h2>Unable to load favorites.</h2>";
+
+            });
+
+    }
+
+    // ======================================
+    // Visit Brand
+    // ======================================
+
+    function openBrand(link){
+
+        window.open(link, "_blank");
+
+    }
+
+    // ======================================
+    // Remove Favorite
+    // ======================================
+
+    function removeFavorite(id){
+
+        fetch("http://localhost:8080/api/favorites/" + id,{
+
+            method:"DELETE"
+
+        })
+
+            .then(response => {
+
+                if(response.ok){
+
+                    loadFavorites();
+
+                }else{
+
+                    console.log("Delete Failed");
+
+                }
+
+            })
+
+            .catch(error => {
+
+                console.error(error);
+
+            });
+
+    }
+
+</script>
+
+<script>
+
+    // Apply Theme on Page Load
+
+    window.onload = function(){
+
+        const theme = localStorage.getItem("theme");
+
+        if(theme === "dark"){
+
+            document.body.classList.add("dark-mode");
+
+        }
+
+    };
+
+</script>
+
+
+</body>
+</html>

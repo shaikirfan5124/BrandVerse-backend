@@ -1,0 +1,1754 @@
+body{
+    font-family: Arial,sans-serif;
+    margin-left: 20px;
+    background:#f5f5f5;
+}
+
+header{
+    background:rgb(123, 208, 242);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+header h1{
+    font-size: 48px;
+    font-weight: bold;
+}
+
+header h1{
+    margin:0;
+}
+
+header p{
+    margin: 5px;
+}
+
+header{
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+
+.auth-buttons{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+
+
+.header{
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+
+.auth-buttons{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.auth-buttons button{
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-buttons button:hover{
+    transform: scale(1.05);
+}
+
+.welcome-text{
+    display:flex;
+    justify-content:left;
+    align-items:center;
+    margin:15px 0;
+}
+
+#welcomeUser{
+    color:#0b0b0b;
+    padding:10px 20px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.brand-box{
+    position:relative;
+}
+
+.brand-box{
+    position:relative;
+}
+
+#favoritesContainer{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+.heart-btn{
+    position:absolute;
+    top:10px;
+    right:10px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+    border-radius:50%;
+    background:whitesmoke;
+    /* <-- CHANGE THIS */
+
+    font-size:24px;
+    cursor:pointer;
+    transition:0.3s;
+
+    color: transparent;
+}
+
+.heart-btn.active{
+    color:whitesmoke;
+}
+
+
+/* Outline Heart */
+.heart-btn::before{
+    content: "\2661";
+    font-size:18px;
+    color:black;
+}
+
+/* Filled Heart */
+.heart-btn.active::before{
+    content: "\2665";
+    font-size:18px;
+    color:red;
+}
+
+.brand-box button{
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    margin:5px;
+    transition:0.3s;
+}
+
+
+/* Remove Button */
+.brand-box button:last-of-type{
+    background:whitesmoke;
+    color:black;
+}
+
+.brand-box button:last-of-type:hover{
+    background:#1976d2;
+    transform:scale(1.05);
+}
+
+/* Visit Brand Button */
+.brand-box button:first-of-type{
+    background:whitesmoke;
+    color:black;
+}
+
+.brand-box button:first-of-type:hover{
+    background:red;
+    transform:scale(1.05);
+}
+.brand-box button{
+    border:none;
+    padding:10px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:bold;
+    margin:5px;
+    transition:all 0.3s ease;
+}
+/*login page*/
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+}
+
+.login-box{
+    width:90%;
+    max-width:350px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    margin:100px auto;
+    text-align:center;
+}
+
+.login-box h2{
+    margin-bottom:20px;
+}
+
+.login-box input{
+    width:90%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.login-box button{
+    width:95%;
+    padding:12px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.login-box button:hover{
+    opacity:0.9;
+}
+
+.login-box a{
+    text-decoration:none;
+}
+
+/*signup*/
+
+.signup-box{
+    width:90%;
+    max-width:350px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    margin:80px auto;
+    text-align:center;
+}
+
+.signup-box input{
+    width:90%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.signup-box button{
+    width:95%;
+    padding:12px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.signup-box button:hover{
+    opacity:0.9;
+}
+
+/*search box*/
+.search-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin:20px auto;
+    flex-wrap:wrap;;
+}
+
+#searchInput{
+    width:420px;
+    height:45px;
+    max-width:80%;
+    padding:0 20px;
+    box-sizing:border-box;
+    border:2px solid #2196f3;
+    border-radius:50px;
+    font-size:16px;
+}
+
+
+.search-container button{
+    width:120px;
+    height:45px;
+    border:none;
+    border-radius:50px;
+    background:#2196f3;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    margin-left:10px;
+    flex-shrink:0;
+}
+
+.search-container button:hover{
+    background:#1976d2;
+    transform:scale(1.05);
+}
+
+.search-container button:active{
+    transform:scale(0.95);
+}
+
+/*suggestion*/
+#suggestions {
+    position: absolute;
+    top: 230px;          /* Adjust if needed */
+    left:0;
+    right:0;
+    margin:0 auto;
+    width: 90%;
+    max-width:600px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    max-height: 200px;
+    overflow-y:auto;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.suggestion-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: #f5f5f5;
+}
+
+
+/* Account Button */
+
+.top-buttons{
+    position:absolute;
+    top:30px;
+    right:40px;
+
+    display:flex;
+    gap:15px;
+}
+
+
+.trending-btn,
+.favorite-btn,
+.account-btn{
+
+    padding:12px 20px;
+
+    border:none;
+    border-radius:100px;
+
+    background:white;
+
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+
+    transition:0.3s;
+}
+
+.trending-btn:hover,
+.favorite-btn:hover,
+.account-btn:hover{
+
+    transform:translateY(-3px);
+
+    background:#2196f3;
+    color:white;
+}
+
+.top-actions{
+    width:95%;
+    margin:20px auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.right-actions{
+    display:flex;
+    gap:15px;
+}
+
+.trending-btn,
+.favorite-btn,
+.account-btn{
+
+    padding:12px 20px;
+
+    border:none;
+    border-radius:100px;
+
+    background:white;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+
+    transition:0.3s;
+}
+
+.trending-btn:hover,
+.favorite-btn:hover,
+.account-btn:hover{
+
+    transform:translateY(-3px);
+
+    background:#2196f3;
+    color:white;
+}
+
+
+/* Dropdown Menu */
+
+.account-dropdown{
+    display:none;
+    position:absolute;
+    right:0;
+    top:225px;
+    min-width:220px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    overflow:hidden;
+    z-index:1000;
+}
+
+.account-dropdown a{
+    display:block;
+    padding:12px 15px;
+    text-decoration:none;
+    color:#333;
+    transition:0.3s;
+}
+
+.account-dropdown a:hover{
+    background:#f5f5f5;
+    padding-left:20px;
+}
+
+/* Show dropdown using JavaScript */
+.account-dropdown.show{
+    display:block;
+}
+
+.categories{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+
+/* Category Card Box */
+.category-box{
+    width: 100%;
+    max-width:250px;  /* Card width */
+    height: auto;             /* Card height */
+    border-radius: 15px;
+    padding: 30px;      /* Rounded corners */
+    overflow: hidden;          /* Hide overflow */
+    text-align: center;        /* Center text */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Shadow */
+    margin: 15px;
+    cursor:pointer;
+    transition: all 0.3s ease;               /* Space between cards */
+}
+
+.category-box:hover{
+    transform: translate(-10px);
+    box-shadow: 0 10px 25px skyblue;;
+}
+
+/* Category Image */
+.category-box img{
+    width: 100%;               /* Full width */
+    height: auto;             /* Fixed image height */
+    object-fit: cover;         /* Crop image properly */
+}
+
+/* Category Title */
+.category-box h3{
+    font-size: 30px;           /* Text size */
+    margin-top: -10px;          /* Space above text */
+    font-family: Arial, sans-serif;
+    color:black;
+}
+
+.category-link,
+.category-link:visited,
+.category-link:hover,
+.category-link:active{
+    text-decoration: none;
+    color: inherit;
+}
+.card{
+    background:white;
+    width:200px;
+    padding:60px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0px 2px 10px gray;
+}
+
+.card a{
+    text-decoration:none;
+    color:black;
+    font-size:20px;
+}
+
+
+
+/* fashion brands */
+.fashion-header{
+    width:100%;
+    background-color:skyblue;
+    padding:20px 0;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.fashion-header h1{
+    margin:0;
+    font-size:40px;
+    font-weight:bold;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+
+.gohome-btn{
+    position: absolute;
+    top: 25px;     /* Move up/down */
+    left: 20px;    /* Move left/right */
+
+    background: #3794f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.gohome-btn:hover{
+    transform: scale(1.05);
+    color:black;
+}
+
+/* Footwear Brands */
+
+.footwear-header{
+    width:100%;
+    background-color:skyblue;
+    padding:20px 0;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.footwear-header h1{
+    margin:0;
+    font-size:40px;
+    font-weight:bold;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+/*brands box*/
+.brand-container{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:25px;
+    padding:20px;
+}
+
+.brand-box{
+    background:#fff;
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    cursor:pointer;
+}
+
+.brand-box img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+
+.brand-box:hover{
+    transform:scale(1.05);
+}
+
+/* Full Screen Website Viewer */
+
+#website-container{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:rgb(123, 208, 242);
+    z-index:9999;
+}
+
+.top-buttons{
+    position:absolute;
+    top:10px;
+    left:10px;
+    right:10px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:10000;
+}
+
+.left-buttons{
+    display:flex;
+    gap:10px;
+}
+
+#brandFrame{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    height:calc(100vh - 60px);
+    border:none;
+}
+
+
+
+.home-btn,
+.back-btn,
+.official-btn{
+    background: #3794f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.home-btn:hover{
+    transform: scale(1.05);
+    color:black;
+}
+
+.back-btn:hover{
+    transform: scale(1.05);
+    color:black;
+}
+
+.official-btn:hover{
+    transform: scale(1.05);
+    color:black;
+}
+
+
+
+/* =========================
+   Full screen dark overlay
+========================= */
+
+/* error message */
+/* Full Screen Error Message Area */
+#error-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/* Popup Box Design */
+.error-box{
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    max-width: 500px;
+}
+
+/* Button Container */
+.error-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Common Style For Both Buttons */
+.back-btn,
+.visit-btn{
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Back Button Style */
+.back-btn{
+    background: #2196f3;
+    color: white;
+}
+
+/* Visit Website Button Style */
+.visit-btn{
+    background: #4CAF50;
+    color: white;
+}
+
+/* Hover Effect */
+.back-btn:hover,
+.visit-btn:hover{
+    opacity: 0.9;
+}
+
+/*History*/
+/* ===========================
+        HISTORY PAGE
+=========================== */
+
+.history-container{
+    width:90%;
+    max-width:1100px;
+    margin:40px auto;
+}
+
+.history-title{
+    text-align:center;
+    margin-bottom:25px;
+    color:#1f4fd6;
+    font-size:35px;
+}
+
+.history-search{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.history-search input{
+
+    width:100%;
+    max-width:600px;
+    padding:14px 20px;
+
+    font-size:16px;
+
+    border:2px solid #ddd;
+    border-radius:30px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.history-search input:focus{
+
+    border-color:#1f4fd6;
+
+}
+
+#historyList{
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+
+.history-card{
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    background:#fff;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+    transition:.3s;
+
+}
+
+.history-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.history-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.history-logo{
+
+    width:80px;
+    height:80px;
+
+    object-fit:contain;
+
+}
+
+.history-info h2{
+
+    margin-bottom:8px;
+
+}
+
+.history-info p{
+
+    color:#666;
+
+}
+
+.history-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.visit-btn{
+
+    padding:10px 18px;
+
+    background:black;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.visit-btn:hover{
+
+    background:#173ea8;
+
+}
+
+.remove-btn{
+
+    padding:10px 18px;
+
+    background:black;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.remove-btn:hover{
+
+    background:#c62828;
+
+}
+
+.clear-history{
+
+    text-align:center;
+
+    margin-top:35px;
+
+}
+
+.clear-btn{
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#000;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+.clear-btn:hover{
+
+    background:#333;
+
+}
+
+.empty-history{
+
+    text-align:center;
+
+    margin-top:100px;
+
+    color:#777;
+
+    font-size:22px;
+
+}
+
+@media(max-width:768px){
+
+    .history-card{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        text-align:center;
+
+    }
+
+    .history-left{
+
+        flex-direction:column;
+
+    }
+
+    .history-search input{
+
+        width:95%;
+
+    }
+
+}
+
+/*settings*/
+/* ==========================================
+   SETTINGS BACKGROUND BOX
+========================================== */
+
+.settings-wrapper{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+    padding:40px;
+    background:#ffffff;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.settings-wrapper h1{
+    text-align:center;
+    color:#2196f3;
+    font-size:2.2rem;
+    margin-bottom:25px;
+}
+
+/* SETTINGS */
+
+.settings-container{
+
+    width:70%;
+    max-width:700px;
+
+    margin:40px auto;
+
+}
+
+.settings-container h1{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================
+   SETTINGS CARDS
+========================================== */
+
+.setting-card{
+
+    background:#fff;
+
+    border-left:6px solid #2196f3;
+
+    border-radius:12px;
+
+    padding:25px 30px;
+
+    margin:25px 0;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+
+    transition:all 0.3s ease;
+
+}
+
+.setting-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,0.18);
+
+}
+
+.setting-card h2{
+
+    margin-bottom:18px;
+
+    color:#222;
+
+    font-size:28px;
+
+}
+
+.setting-card label{
+
+    display:block;
+
+    margin:14px 0;
+
+    font-size:17px;
+
+}
+
+.setting-card select{
+
+    padding:10px 15px;
+
+    font-size:16px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    outline:none;
+
+}
+
+.setting-card button{
+
+    display:block;
+
+    margin:12px 0;
+
+    padding:12px 18px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#2196f3;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+}
+
+.setting-card button:hover{
+
+    background:#1976d2;
+
+    transform:scale(1.03);
+
+}
+
+/* Toggle */
+
+.switch{
+
+    position:relative;
+
+    display:inline-block;
+
+    width:50px;
+
+    height:25px;
+
+}
+
+.switch input{
+
+    display:none;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    cursor:pointer;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    background:#ccc;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+.slider:before{
+
+    content:"";
+
+    position:absolute;
+
+    height:19px;
+
+    width:19px;
+
+    left:3px;
+
+    bottom:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+.switch input:checked + .slider{
+
+    background:#1f6fff;
+
+}
+
+.switch input:checked + .slider:before{
+
+    transform:translateX(25px);
+
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+
+.dark-mode{
+
+    background:#121212;
+
+    color:white;
+
+}
+
+.dark-mode .setting-card{
+
+    background:#1e1e1e;
+
+    color:white;
+
+}
+
+.dark-mode select{
+
+    background:#333;
+
+    color:white;
+
+}
+
+.dark-mode button{
+
+    background:#444;
+
+}
+
+.dark-mode .header{
+
+    background:#1f1f1f;
+
+}
+
+.dark-mode .brand-box{
+
+    background:#708090;
+
+    color:white;
+
+}
+
+.dark-mode .category-box{
+
+    background:#708090;
+
+    color:white;
+
+}
+
+.dark-mode .popup{
+
+    background:#708090;
+
+    color:white;
+
+}
+
+.dark-mode .account-menu{
+
+    background:#242424;
+
+}
+
+.dark-mode button{
+
+    background:#444;
+
+    color:white;
+
+}
+
+/*about*/
+/* ==========================================
+   ABOUT PAGE
+========================================== */
+
+body {
+    background: #f4f7fb;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.container h1 {
+    text-align: center;
+    color: #2196f3;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.container h1 i {
+    margin-right: 10px;
+}
+
+.container p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+/* About Cards */
+
+.card{
+
+    background:#fff;
+
+    border-left:6px solid #2196f3;
+
+    border-radius:12px;
+
+    width : 90%;
+
+    padding:25px;
+
+    margin:25px 0;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    transition:0.3s;
+
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 28px rgba(0,0,0,0.18);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #222;
+    font-size: 28px;
+}
+
+.card p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.card ul{
+
+    list-style: disc;
+
+    padding-left:35px;
+
+    margin-top:15px;
+
+}
+
+.card li{
+
+    margin-bottom:12px;
+
+    font-size:18px;
+
+    color:#444;
+
+    line-height:1.8;
+
+}
+
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 35px;
+    padding: 14px 28px;
+    background: #2196f3;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background: #1976d2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(33,150,243,0.3);
+}
+
+.home-btn i {
+    font-size: 18px;
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+    .container{
+        margin:20px;
+        padding:25px;
+    }
+
+    .container h1{
+        font-size:1.8rem;
+    }
+
+    .card h2{
+        font-size:20px;
+    }
+
+    .container p,
+    .card li{
+        font-size:15px;
+    }
+
+    .home-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+}
+
+/*help*/
+/* FAQ Section */
+.faq-list {
+    padding-left: 25px;
+    text-align: left;
+}
+
+.faq-list li {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.faq-list li strong {
+    display: block;
+    color: #222;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+/*profile*/
+/*====================================
+        PROFILE PAGE
+====================================*/
+
+.profile-container{
+    max-width:950px;
+    margin:40px auto;
+    background:#fff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.profile-header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.profile-avatar{
+    width:120px;
+    height:120px;
+    background:#2196f3;
+    color:#fff;
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.profile-header h1{
+    color:#222;
+    margin-bottom:5px;
+}
+
+.profile-header p{
+    color:#666;
+    margin-bottom:10px;
+}
+
+.member-date{
+    color:#888;
+    font-size:15px;
+}
+
+.profile-card{
+    background:#fafafa;
+    padding:25px;
+    margin-top:25px;
+    border-radius:12px;
+    border-left:5px solid #2196f3;
+}
+
+.profile-card h2{
+    color:#222;
+    margin-bottom:20px;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row span:first-child{
+    font-weight:600;
+    color:#333;
+}
+
+.info-row span:last-child{
+    color:#666;
+}
+
+.stats{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.stat-box{
+    flex:1;
+    min-width:180px;
+    text-align:center;
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.stat-box:hover{
+    transform:translateY(-5px);
+}
+
+.stat-box i{
+    font-size:30px;
+    color:#2196f3;
+    margin-bottom:10px;
+}
+
+.stat-box h3{
+    font-size:30px;
+    color:#222;
+}
+
+.stat-box p{
+    color:#666;
+}
+
+.quick-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.quick-links a{
+    text-decoration:none;
+    background:#2196f3;
+    color:#fff;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    transition:.3s;
+}
+
+.quick-links a:hover{
+    background:#1976d2;
+}
+
+.quick-links i{
+    margin-right:8px;
+}
+
+@media(max-width:768px){
+
+    .info-row{
+        flex-direction:column;
+        gap:6px;
+    }
+
+    .stats{
+        flex-direction:column;
+    }
+
+    .profile-container{
+        margin:20px;
+        padding:20px;
+    }
+
+}
+
+footer{
+    text-align:center;
+    margin-top:50px;
+    padding:15px;
+}
+/*mobiles*/
+@media(max-width:1024px){
+    .brand-container{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+
+@media(max-width:768px){
+    .brand-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+
+    header h1{
+        font-size:30px;
+    }
+
+    .top-buttons{
+        position:static;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+        margin-top:15px;
+    }
+
+    .auth-buttons{
+        position:static;
+        display:flex;
+        justify-content:center;
+        margin-top:15px;
+    }
+
+    .brand-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .category-box{
+        max-width:100%;
+    }
+
+    .search-container button{
+        width:100%;
+        margin:10px 0 0;
+    }
+
+    #searchInput{
+        width:100%;
+    }
+
+    .brand-box img{
+        width:90px;
+        height:90px;
+    }
+
+    .gohome-btn{
+        position:static;
+        display:block;
+        margin:10px auto;
+    }
+
+
+    @media(max-width:768px){
+
+        .search-container{
+            flex-direction:column;
+        }
+
+        #searchInput{
+            width:90%;
+            max-width:400px;
+        }
+
+        .search-container button{
+            width:180px;
+        }
+
+    }
+
+
+
+/*small phones*/
+    @media (max-width:480px){
+
+        /* Keep 2 brand boxes */
+        .brand-container{
+            grid-template-columns:repeat(2,1fr);
+            gap:15px;
+        }
+
+        /* Stack top controls */
+        .top-actions{
+            flex-direction:column;
+            gap:15px;
+        }
+
+        .right-actions{
+            justify-content:center;
+            width:100%;
+            gap:10px;
+        }
+
+        /* Search bar */
+        .search-container{
+            flex-direction:column;
+            width:100%;
+            align-items:center;
+        }
+
+        #searchInput{
+            width:90%;
+            max-width:320px;
+        }
+
+        .search-container button{
+            width:180px;
+            margin:0;
+        }
+
+        /* Smaller brand cards */
+        .brand-box{
+            padding:10px;
+        }
+
+        .brand-box img{
+            width:80px;
+            height:80px;
+        }
+
+        .brand-box h3{
+            font-size:16px;
+        }
+
+        /* Buttons */
+        .trending-btn,
+        .favorite-btn,
+        .account-btn{
+            padding:10px 15px;
+            font-size:15px;
+        }
+    }
+ }
+}
