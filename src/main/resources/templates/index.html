@@ -21,7 +21,7 @@
 <div class="top-actions">
 
     <button class="trending-btn"
-            onclick="window.location.href='trending.html'">
+            onclick="window.location.href='/trending'">
         &#128293; Trending
     </button>
 
@@ -40,7 +40,7 @@
     <div class="right-actions">
 
         <button class="favorite-btn"
-                onclick="window.location.href='favorites.html'">
+                onclick="window.location.href='/favorites'">
             &#10084;&#65039
         </button>
 
@@ -55,21 +55,21 @@
 
             <div class="account-dropdown" id="accountDropdown">
 
-                <a id="loginText" href="login.html">&#128274; Login</a>
+                <a id="loginText" th:href="@{/login}">&#128274; Login</a>
 
-                <a id="signupText" href="signup.html">&#128221; Sign Up</a>
+                <a id="signupText" th:href="@{/signup}">&#128221; Sign Up</a>
 
-                <a id="profileText" href="profile.html"> &#128100; Profile</a>
+                <a id="profileText" th:href="@{/profile}">&#128100; Profile</a>
 
-                <a id="favoritesText" href="favorites.html">&#10084;&#65039 Favorites</a>
+                <a id="favoritesText" th:href="@{/favorites}">&#10084;&#65039; Favorites</a>
 
-                <a id="historyText" href="history.html">&#128269; History</a>
+                <a id="historyText" th:href="@{/history}">&#128269; History</a>
 
-                <a id="settingsText" href="settings.html">&#9881;&#65039; Settings</a>
+                <a id="settingsText" th:href="@{/settings}">&#9881;&#65039; Settings</a>
 
-                <a id="helpText" href="help.html">&#10067; Help & Support</a>
+                <a id="helpText" th:href="@{/help}">&#10067; Help & Support</a>
 
-                <a id="aboutText" href="about.html">&#8505;&#65039; About</a>
+                <a id="aboutText" th:href="@{/about}">&#8505;&#65039; About</a>
 
                 <a id="logoutText" href="#" onclick="logout()">&#128682; Logout</a>
 
@@ -111,7 +111,7 @@
 
         alert("Logged Out Successfully!");
 
-        window.location.href = "login.html";
+        window.location.href = "/login";
     }
 
 </script>
@@ -475,7 +475,7 @@
 
 
     <!-- Fashion Button -->
-    <a href="fashion.html" class="category-link">
+    <a th:href="@{/fashion}" class="category-link">
         <div class="category-box">
             <img th:src="@{/images/fashion.jpg}" alt="Fashion">
             <h3 id="fashion">Fashion</h3>
