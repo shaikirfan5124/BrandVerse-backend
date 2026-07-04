@@ -96,4 +96,7 @@ public class PageController {
         return "home";
     }
 
+    @GetMapping("/trending")
+    public String trending(){return "trending";}
+
 }
