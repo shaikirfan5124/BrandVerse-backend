@@ -112,39 +112,19 @@ header{
     background:whitesmoke;
 
     cursor:pointer;
-    transition:0.3s;
 }
 
-/* Default Heart */
+/* Outline Heart */
 .heart-btn::before{
     content:"\2661";
     font-size:22px;
     color:black;
-    transition:0.3s;
 }
 
-/* Desktop/Laptop Hover Only */
-@media (hover:hover) and (pointer:fine){
-
-    .heart-btn:hover::before{
-        content:"\2665";
-        color:red;
-    }
-
-    .heart-btn:hover{
-        background:whitesmoke;
-    }
-
-}
-
-/* Mobile - No Hover */
-@media (hover:none){
-
-    .heart-btn::before{
-        content:"\2661";
-        color:black;
-    }
-
+/* Filled Heart */
+.heart-btn.active::before{
+    content:"\2665";
+    color:red;
 }
 
 .brand-box button{
@@ -485,46 +465,55 @@ body{
 }
 
 .categories{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
+    width:95%;
+    max-width:1400px;
+    margin:30px auto;
 
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+
+    gap:20px;
+}
 
 /* Category Card Box */
 .category-box{
-    width: 100%;
-    max-width:250px;  /* Card width */
-    height: auto;             /* Card height */
-    border-radius: 15px;
-    padding: 30px;      /* Rounded corners */
-    overflow: hidden;          /* Hide overflow */
-    text-align: center;        /* Center text */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Shadow */
-    margin: 15px;
+    width:100%;
+    background:#fff;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+    text-align:center;
+
     cursor:pointer;
-    transition: all 0.3s ease;               /* Space between cards */
+
+    transition:.3s;
+
+    box-sizing:border-box;
 }
 
 .category-box:hover{
-    transform: translate(-10px);
-    box-shadow: 0 10px 25px skyblue;;
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
 }
+
 
 /* Category Image */
 .category-box img{
-    width: 100%;               /* Full width */
-    height: auto;             /* Fixed image height */
-    object-fit: cover;         /* Crop image properly */
+    width:100%;
+    max-width:180px;
+    height:180px;
+    object-fit:contain;
 }
 
 /* Category Title */
 .category-box h3{
-    font-size: 30px;           /* Text size */
-    margin-top: -10px;          /* Space above text */
-    font-family: Arial, sans-serif;
-    color:black;
+    font-size:30px;
+    margin-top:15px;
+    color:#000;
 }
 
 .category-link,
@@ -1626,34 +1615,149 @@ footer{
     margin-top:50px;
     padding:15px;
 }
-/* ==========================================
-        TABLETS (1024px)
-========================================== */
-@media (max-width:1024px){
 
-    .brand-container{
-        grid-template-columns:repeat(3,1fr);
-        gap:20px;
-    }
+/* =========================
+        TABLETS
+========================= */
+
+@media screen and (max-width:1024px){
 
     .categories{
-        display:grid;
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .category-box img{
+        height:160px;
+    }
+
+}
+
+/* =========================
+        MOBILES
+========================= */
+
+@media screen and (max-width:768px){
+
+    .categories{
         grid-template-columns:repeat(2,1fr);
-        gap:20px;
+        gap:15px;
+        padding:10px;
     }
 
     .category-box{
+        padding:15px;
+    }
+
+    .category-box img{
+        height:140px;
+    }
+
+    .category-box h3{
+        font-size:20px;
+    }
+
+}
+
+/* =========================
+        SMALL MOBILES
+========================= */
+
+@media screen and (max-width:480px){
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+        padding:10px;
+    }
+
+    .category-box{
+        padding:12px;
+    }
+
+    .category-box img{
+        height:110px;
+    }
+
+    .category-box h3{
+        font-size:17px;
+    }
+
+}
+
+/* ===================================================
+                TABLETS (1024px)
+=================================================== */
+@media screen and (max-width:1024px){
+
+    html,body{
         width:100%;
-        max-width:none;
+        overflow-x:hidden;
+    }
+
+    .top-actions{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:12px;
+        width:96%;
+        margin:18px auto;
+    }
+
+    .search-container{
+        flex:1;
+        display:flex;
+        align-items:center;
+        gap:10px;
+    }
+
+    #searchInput{
+        flex:1;
+    }
+
+    .search-container button{
+        width:120px;
         margin:0;
     }
+
+    .right-actions{
+        display:flex;
+        gap:10px;
+    }
+
+    .categories{
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:20px;
+        padding:20px;
+    }
+
+    .category-box{
+        width:100% !important;
+        max-width:none;
+        margin:0;
+        padding:20px;
+    }
+
+    .brand-container{
+        display:grid !important;
+        grid-template-columns:repeat(3,1fr) !important;
+        gap:18px;
+    }
+
+    .brand-box{
+        width:100%;
+    }
+
 }
 
 
-@media (max-width:768px){
+/* ===================================================
+                MOBILE (768px)
+=================================================== */
 
-    html,
-    body{
+@media screen and (max-width:768px){
+
+    html,body{
         margin:0;
         padding:0;
         width:100%;
@@ -1662,8 +1766,8 @@ footer{
 
     header{
         width:100%;
-        margin:0;
         padding:20px 10px;
+        box-sizing:border-box;
     }
 
     header h1{
@@ -1675,15 +1779,16 @@ footer{
     }
 
     .top-actions{
+
         width:98%;
         margin:15px auto;
 
         display:flex;
         align-items:center;
         justify-content:center;
+
         gap:8px;
 
-        flex-wrap:nowrap;
     }
 
     .trending-btn{
@@ -1691,200 +1796,240 @@ footer{
     }
 
     .search-container{
-        flex:1;
 
         display:flex;
-        align-items:center;
+        flex:1;
         gap:8px;
+        align-items:center;
+
     }
 
     #searchInput{
+
         flex:1;
         width:auto;
         min-width:0;
         height:42px;
+
     }
 
     .search-container button{
+
         width:90px;
         height:42px;
         margin:0;
+
     }
 
     .right-actions{
+
         display:flex;
         gap:8px;
         flex-shrink:0;
+
     }
 
     .favorite-btn,
     .account-btn,
     .trending-btn{
-        padding:10px 12px;
+
         font-size:14px;
+        padding:10px 12px;
         white-space:nowrap;
+
     }
 
     .categories{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
+
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+
         gap:15px;
         padding:15px;
+
     }
 
     .category-box{
-        width:100%;
+
+        width:100% !important;
         max-width:none;
         margin:0;
         padding:15px;
+
     }
 
     .category-box img{
+
         width:100%;
         height:auto;
+
     }
 
     .category-box h3{
+
         font-size:18px;
+
     }
+
+    .brand-container{
+
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+
+        gap:15px;
+        padding:15px;
+
+    }
+
+    .brand-box{
+
+        width:100%;
+        padding:10px;
+
+    }
+
+    .brand-box img{
+
+        width:90px;
+        height:90px;
+
+    }
+
+    .brand-box h3{
+
+        font-size:16px;
+
+    }
+
 }
 
-/* ==========================================
-        SMALL PHONES (480px)
-========================================== */
-@media (max-width:480px){
 
-    html,
-    body{
-        width:100%;
-        overflow-x:hidden;
-    }
+/* ===================================================
+            SMALL PHONES (480px)
+=================================================== */
 
-    header{
-        width:100%;
-        padding:18px 10px;
-    }
+@media screen and (max-width:480px){
 
     header h1{
-        font-size:24px;
+
+        font-size:26px;
+
     }
 
     header p{
-        font-size:14px;
+
+        font-size:15px;
+
     }
 
-    /* Top Row */
     .top-actions{
+
         width:98%;
-        margin:12px auto;
+        gap:5px;
 
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        gap:6px;
-
-        flex-wrap:nowrap;
     }
 
     .trending-btn{
+
         padding:8px 10px;
         font-size:12px;
-        flex-shrink:0;
+
     }
 
     .search-container{
-        flex:1;
 
-        display:flex;
-        align-items:center;
-        gap:6px;
+        flex:1;
+        gap:5px;
+
     }
 
     #searchInput{
-        flex:1;
-        width:auto;
-        min-width:0;
 
         height:38px;
-
         font-size:13px;
-        padding:0 12px;
+
     }
 
     .search-container button{
-        width:75px;
+
+        width:72px;
         height:38px;
+        font-size:12px;
 
-        font-size:13px;
-        margin:0;
-
-        flex-shrink:0;
-    }
-
-    .right-actions{
-        display:flex;
-        gap:6px;
-        flex-shrink:0;
     }
 
     .favorite-btn,
     .account-btn{
-        padding:8px 10px;
+
+        padding:8px;
         font-size:12px;
+
     }
 
-    /* Categories */
     .categories{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
-        padding:12px;
+
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+
+        gap:10px;
+        padding:10px;
+
     }
 
     .category-box{
-        width:100%;
-        max-width:none;
 
-        padding:12px;
-        margin:0;
+        width:100% !important;
+        padding:10px;
+
     }
 
     .category-box img{
+
         width:100%;
-        height:auto;
+
     }
 
     .category-box h3{
-        font-size:16px;
-        margin-top:10px;
+
+        font-size:15px;
+
     }
 
-    /* Brand Cards */
     .brand-container{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
-        padding:12px;
+
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+
+        gap:10px;
+        padding:10px;
+
     }
 
     .brand-box{
-        padding:10px;
+
+        width:100%;
+        padding:8px;
+
     }
 
     .brand-box img{
+
         width:70px;
         height:70px;
+
     }
 
     .brand-box h3{
+
         font-size:14px;
+
     }
 
     .heart-btn{
-        width:36px;
-        height:36px;
+
+        width:34px;
+        height:34px;
+
     }
 
-    .heart-btn::before{
-        font-size:16px;
-    }
 }
