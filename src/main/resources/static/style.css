@@ -123,26 +123,28 @@ header{
     transition:0.3s;
 }
 
-/* Desktop Hover - only heart changes */
-@media (hover:hover){
+/* Desktop/Laptop Hover Only */
+@media (hover:hover) and (pointer:fine){
+
     .heart-btn:hover::before{
-        content:"♥";
+        content:"\2665";
         color:red;
     }
 
     .heart-btn:hover{
-        background:whitesmoke;   /* Keep same background */
+        background:whitesmoke;
     }
+
 }
 
-/* Mobile/Desktop Click */
-.heart-btn.active::before{
-    content:"\2665";
-    color:red;
-}
+/* Mobile - No Hover */
+@media (hover:none){
 
-.heart-btn.active{
-    background:whitesmoke;       /* Keep same background */
+    .heart-btn::before{
+        content:"\2661";
+        color:black;
+    }
+
 }
 
 .brand-box button{
@@ -275,38 +277,42 @@ body{
 
 /*search box*/
 .search-container{
+    flex:1;
     display:flex;
-    justify-content:center;
     align-items:center;
-    gap:10px;
-    margin:20px auto;
-    flex-wrap:wrap;;
+    gap:12px;
 }
 
 #searchInput{
-    width:420px;
+    flex:1;
     height:45px;
-    max-width:80%;
+
     padding:0 20px;
-    box-sizing:border-box;
+
     border:2px solid #2196f3;
     border-radius:50px;
+
     font-size:16px;
+    box-sizing:border-box;
 }
 
-
 .search-container button{
-    width:120px;
+    width:150px;
     height:45px;
+
     border:none;
     border-radius:50px;
+
     background:#2196f3;
     color:white;
+
     font-size:16px;
     font-weight:bold;
+
     cursor:pointer;
-    transition:0.3s;
-    margin-left:10px;
+    transition:.3s;
+
+    margin:0;
     flex-shrink:0;
 }
 
@@ -401,12 +407,15 @@ body{
     margin:20px auto;
 
     display:flex;
-    justify-content:space-between;
     align-items:center;
-}
+    justify-content:center;
+    gap:15px;
 
+    flex-wrap:nowrap;
+}
 .right-actions{
     display:flex;
+    align-items:center;
     gap:15px;
 }
 
@@ -1641,92 +1650,81 @@ footer{
 }
 
 
-/* ==========================================
-        MOBILE (768px)
-========================================== */
 @media (max-width:768px){
 
     html,
     body{
-        width:100%;
         margin:0;
         padding:0;
+        width:100%;
         overflow-x:hidden;
     }
 
-    /* Header */
     header{
         width:100%;
         margin:0;
         padding:20px 10px;
-        box-sizing:border-box;
     }
 
     header h1{
-        font-size:32px;
+        font-size:34px;
     }
 
     header p{
         font-size:18px;
     }
 
-    /* Login buttons */
-    .auth-buttons{
-        position:static;
-        display:flex;
-        justify-content:center;
-        gap:10px;
-        margin-top:15px;
-    }
+    .top-actions{
+        width:98%;
+        margin:15px auto;
 
-    /* Search */
-    .search-container{
         display:flex;
-        flex-direction:row;
         align-items:center;
         justify-content:center;
-        gap:10px;
-        width:100%;
-        padding:0 10px;
-        box-sizing:border-box;
+        gap:8px;
+
+        flex-wrap:nowrap;
     }
 
-    #searchInput{
-        width:70%;
-        max-width:none;
-    }
-
-    .search-container button{
-        width:110px;
-        margin:0;
+    .trending-btn{
         flex-shrink:0;
     }
 
-    /* Trending - Favorite - Account */
-    .top-actions{
+    .search-container{
+        flex:1;
+
         display:flex;
-        justify-content:space-between;
         align-items:center;
-        width:100%;
-        padding:0 10px;
         gap:8px;
-        box-sizing:border-box;
+    }
+
+    #searchInput{
+        flex:1;
+        width:auto;
+        min-width:0;
+        height:42px;
+    }
+
+    .search-container button{
+        width:90px;
+        height:42px;
+        margin:0;
     }
 
     .right-actions{
         display:flex;
         gap:8px;
+        flex-shrink:0;
     }
 
-    .trending-btn,
     .favorite-btn,
-    .account-btn{
-        padding:10px 14px;
-        font-size:15px;
+    .account-btn,
+    .trending-btn{
+        padding:10px 12px;
+        font-size:14px;
         white-space:nowrap;
     }
 
-    /* Categories */
     .categories{
         display:grid;
         grid-template-columns:repeat(2,1fr);
@@ -1739,7 +1737,6 @@ footer{
         max-width:none;
         margin:0;
         padding:15px;
-        box-sizing:border-box;
     }
 
     .category-box img{
@@ -1748,13 +1745,125 @@ footer{
     }
 
     .category-box h3{
-        font-size:20px;
+        font-size:18px;
+    }
+}
+
+/* ==========================================
+        SMALL PHONES (480px)
+========================================== */
+@media (max-width:480px){
+
+    html,
+    body{
+        width:100%;
+        overflow-x:hidden;
     }
 
-    /* Brands */
+    header{
+        width:100%;
+        padding:18px 10px;
+    }
+
+    header h1{
+        font-size:24px;
+    }
+
+    header p{
+        font-size:14px;
+    }
+
+    /* Top Row */
+    .top-actions{
+        width:98%;
+        margin:12px auto;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:6px;
+
+        flex-wrap:nowrap;
+    }
+
+    .trending-btn{
+        padding:8px 10px;
+        font-size:12px;
+        flex-shrink:0;
+    }
+
+    .search-container{
+        flex:1;
+
+        display:flex;
+        align-items:center;
+        gap:6px;
+    }
+
+    #searchInput{
+        flex:1;
+        width:auto;
+        min-width:0;
+
+        height:38px;
+
+        font-size:13px;
+        padding:0 12px;
+    }
+
+    .search-container button{
+        width:75px;
+        height:38px;
+
+        font-size:13px;
+        margin:0;
+
+        flex-shrink:0;
+    }
+
+    .right-actions{
+        display:flex;
+        gap:6px;
+        flex-shrink:0;
+    }
+
+    .favorite-btn,
+    .account-btn{
+        padding:8px 10px;
+        font-size:12px;
+    }
+
+    /* Categories */
+    .categories{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+        padding:12px;
+    }
+
+    .category-box{
+        width:100%;
+        max-width:none;
+
+        padding:12px;
+        margin:0;
+    }
+
+    .category-box img{
+        width:100%;
+        height:auto;
+    }
+
+    .category-box h3{
+        font-size:16px;
+        margin-top:10px;
+    }
+
+    /* Brand Cards */
     .brand-container{
         grid-template-columns:repeat(2,1fr);
-        gap:15px;
+        gap:12px;
+        padding:12px;
     }
 
     .brand-box{
@@ -1762,74 +1871,20 @@ footer{
     }
 
     .brand-box img{
-        width:90px;
-        height:90px;
+        width:70px;
+        height:70px;
     }
 
     .brand-box h3{
-        font-size:16px;
-    }
-
-    .gohome-btn{
-        position:static;
-        display:block;
-        margin:15px auto;
-    }
-}
-
-
-/* ==========================================
-        SMALL PHONES (480px)
-========================================== */
-@media (max-width:480px){
-
-    header h1{
-        font-size:26px;
-    }
-
-    header p{
-        font-size:15px;
-    }
-
-    .search-container{
-        gap:8px;
-    }
-
-    #searchInput{
-        width:68%;
-    }
-
-    .search-container button{
-        width:95px;
         font-size:14px;
     }
 
-    .trending-btn,
-    .favorite-btn,
-    .account-btn{
-        padding:8px 10px;
-        font-size:13px;
+    .heart-btn{
+        width:36px;
+        height:36px;
     }
 
-    .brand-container{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
-    }
-
-    .category-box{
-        padding:12px;
-    }
-
-    .category-box h3{
-        font-size:18px;
-    }
-
-    .brand-box img{
-        width:80px;
-        height:80px;
-    }
-
-    .brand-box h3{
-        font-size:15px;
+    .heart-btn::before{
+        font-size:16px;
     }
 }
