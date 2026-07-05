@@ -98,6 +98,7 @@ header{
     padding:20px;
 }
 
+/* Heart Button */
 .heart-btn{
     position:absolute;
     top:10px;
@@ -109,32 +110,39 @@ header{
     border:none;
     border-radius:50%;
     background:whitesmoke;
-    /* <-- CHANGE THIS */
 
-    font-size:24px;
     cursor:pointer;
     transition:0.3s;
+}
 
-    color: transparent;
+/* Default Heart */
+.heart-btn::before{
+    content:"\2661";
+    font-size:22px;
+    color:black;
+    transition:0.3s;
+}
+
+/* Desktop Hover - only heart changes */
+@media (hover:hover){
+    .heart-btn:hover::before{
+        content:"♥";
+        color:red;
+    }
+
+    .heart-btn:hover{
+        background:whitesmoke;   /* Keep same background */
+    }
+}
+
+/* Mobile/Desktop Click */
+.heart-btn.active::before{
+    content:"\2665";
+    color:red;
 }
 
 .heart-btn.active{
-    color:whitesmoke;
-}
-
-
-/* Outline Heart */
-.heart-btn::before{
-    content: "\2661";
-    font-size:18px;
-    color:black;
-}
-
-/* Filled Heart */
-.heart-btn.active::before{
-    content: "\2665";
-    font-size:18px;
-    color:red;
+    background:whitesmoke;       /* Keep same background */
 }
 
 .brand-box button{
@@ -1609,54 +1617,148 @@ footer{
     margin-top:50px;
     padding:15px;
 }
-/*mobiles*/
-@media(max-width:1024px){
+/* ==========================================
+        TABLETS (1024px)
+========================================== */
+@media (max-width:1024px){
+
     .brand-container{
         grid-template-columns:repeat(3,1fr);
+        gap:20px;
     }
 
-
-@media(max-width:768px){
-    .brand-container{
+    .categories{
+        display:grid;
         grid-template-columns:repeat(2,1fr);
+        gap:20px;
     }
 
+    .category-box{
+        width:100%;
+        max-width:none;
+        margin:0;
+    }
+}
+
+
+/* ==========================================
+        MOBILE (768px)
+========================================== */
+@media (max-width:768px){
+
+    html,
+    body{
+        width:100%;
+        margin:0;
+        padding:0;
+        overflow-x:hidden;
+    }
+
+    /* Header */
+    header{
+        width:100%;
+        margin:0;
+        padding:20px 10px;
+        box-sizing:border-box;
+    }
 
     header h1{
-        font-size:30px;
+        font-size:32px;
     }
 
-    .top-buttons{
+    header p{
+        font-size:18px;
+    }
+
+    /* Login buttons */
+    .auth-buttons{
         position:static;
         display:flex;
-        flex-wrap:wrap;
         justify-content:center;
         gap:10px;
         margin-top:15px;
     }
 
-    .auth-buttons{
-        position:static;
+    /* Search */
+    .search-container{
         display:flex;
+        flex-direction:row;
+        align-items:center;
         justify-content:center;
-        margin-top:15px;
-    }
-
-    .brand-container{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .category-box{
-        max-width:100%;
-    }
-
-    .search-container button{
+        gap:10px;
         width:100%;
-        margin:10px 0 0;
+        padding:0 10px;
+        box-sizing:border-box;
     }
 
     #searchInput{
+        width:70%;
+        max-width:none;
+    }
+
+    .search-container button{
+        width:110px;
+        margin:0;
+        flex-shrink:0;
+    }
+
+    /* Trending - Favorite - Account */
+    .top-actions{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
         width:100%;
+        padding:0 10px;
+        gap:8px;
+        box-sizing:border-box;
+    }
+
+    .right-actions{
+        display:flex;
+        gap:8px;
+    }
+
+    .trending-btn,
+    .favorite-btn,
+    .account-btn{
+        padding:10px 14px;
+        font-size:15px;
+        white-space:nowrap;
+    }
+
+    /* Categories */
+    .categories{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+        padding:15px;
+    }
+
+    .category-box{
+        width:100%;
+        max-width:none;
+        margin:0;
+        padding:15px;
+        box-sizing:border-box;
+    }
+
+    .category-box img{
+        width:100%;
+        height:auto;
+    }
+
+    .category-box h3{
+        font-size:20px;
+    }
+
+    /* Brands */
+    .brand-container{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+    }
+
+    .brand-box{
+        padding:10px;
     }
 
     .brand-box img{
@@ -1664,91 +1766,70 @@ footer{
         height:90px;
     }
 
+    .brand-box h3{
+        font-size:16px;
+    }
+
     .gohome-btn{
         position:static;
         display:block;
-        margin:10px auto;
+        margin:15px auto;
+    }
+}
+
+
+/* ==========================================
+        SMALL PHONES (480px)
+========================================== */
+@media (max-width:480px){
+
+    header h1{
+        font-size:26px;
     }
 
-
-    @media(max-width:768px){
-
-        .search-container{
-            flex-direction:column;
-        }
-
-        #searchInput{
-            width:90%;
-            max-width:400px;
-        }
-
-        .search-container button{
-            width:180px;
-        }
-
+    header p{
+        font-size:15px;
     }
 
-
-
-/*small phones*/
-    @media (max-width:480px){
-
-        /* Keep 2 brand boxes */
-        .brand-container{
-            grid-template-columns:repeat(2,1fr);
-            gap:15px;
-        }
-
-        /* Stack top controls */
-        .top-actions{
-            flex-direction:column;
-            gap:15px;
-        }
-
-        .right-actions{
-            justify-content:center;
-            width:100%;
-            gap:10px;
-        }
-
-        /* Search bar */
-        .search-container{
-            flex-direction:column;
-            width:100%;
-            align-items:center;
-        }
-
-        #searchInput{
-            width:90%;
-            max-width:320px;
-        }
-
-        .search-container button{
-            width:180px;
-            margin:0;
-        }
-
-        /* Smaller brand cards */
-        .brand-box{
-            padding:10px;
-        }
-
-        .brand-box img{
-            width:80px;
-            height:80px;
-        }
-
-        .brand-box h3{
-            font-size:16px;
-        }
-
-        /* Buttons */
-        .trending-btn,
-        .favorite-btn,
-        .account-btn{
-            padding:10px 15px;
-            font-size:15px;
-        }
+    .search-container{
+        gap:8px;
     }
- }
+
+    #searchInput{
+        width:68%;
+    }
+
+    .search-container button{
+        width:95px;
+        font-size:14px;
+    }
+
+    .trending-btn,
+    .favorite-btn,
+    .account-btn{
+        padding:8px 10px;
+        font-size:13px;
+    }
+
+    .brand-container{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .category-box{
+        padding:12px;
+    }
+
+    .category-box h3{
+        font-size:18px;
+    }
+
+    .brand-box img{
+        width:80px;
+        height:80px;
+    }
+
+    .brand-box h3{
+        font-size:15px;
+    }
 }

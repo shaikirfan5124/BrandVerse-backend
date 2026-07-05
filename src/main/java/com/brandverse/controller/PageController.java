@@ -99,4 +99,8 @@ public class PageController {
     @GetMapping("/trending")
     public String trending(){return "trending";}
 
+    @GetMapping("/gohome")
+    public String gohome(){return "gohome";}
+
+
 }
