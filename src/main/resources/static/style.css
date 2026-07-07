@@ -112,6 +112,17 @@ header{
     background:whitesmoke;
 
     cursor:pointer;
+
+
+/* Add these */
+-webkit-tap-highlight-color: transparent;
+outline:none;
+}
+
+.heart-btn:focus,
+.heart-btn:active{
+    outline:none;
+    box-shadow:none;
 }
 
 /* Outline Heart */
@@ -497,7 +508,7 @@ body{
 
 .category-box:hover{
     transform:translateY(-6px);
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
+    box-shadow:10px 25px rgba(0,0,0,.18);
 }
 
 
@@ -1779,16 +1790,12 @@ footer{
     }
 
     .top-actions{
-
-        width:98%;
+        width:100%;
         margin:15px auto;
-
         display:flex;
+        gap:10px;
+        justify-content:space-between;
         align-items:center;
-        justify-content:center;
-
-        gap:8px;
-
     }
 
     .trending-btn{
@@ -1796,12 +1803,7 @@ footer{
     }
 
     .search-container{
-
-        display:flex;
-        flex:1;
-        gap:8px;
-        align-items:center;
-
+        display:none !important;
     }
 
     #searchInput{
@@ -1822,21 +1824,22 @@ footer{
     }
 
     .right-actions{
-
         display:flex;
-        gap:8px;
-        flex-shrink:0;
-
+        flex:1;
+        gap:10px;
     }
 
+    .trending-btn,
     .favorite-btn,
-    .account-btn,
-    .trending-btn{
-
+    .account-btn{
+        flex:1;
+        height:46px;
+        padding:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
         font-size:14px;
-        padding:10px 12px;
         white-space:nowrap;
-
     }
 
     .categories{
@@ -1923,10 +1926,8 @@ footer{
     }
 
     .top-actions{
-
-        width:98%;
-        gap:5px;
-
+        width:100%;
+        gap:8px;
     }
 
     .trending-btn{
@@ -1937,10 +1938,7 @@ footer{
     }
 
     .search-container{
-
-        flex:1;
-        gap:5px;
-
+        display:none !important;
     }
 
     #searchInput{
@@ -1958,12 +1956,16 @@ footer{
 
     }
 
+    .trending-btn,
     .favorite-btn,
     .account-btn{
-
-        padding:8px;
+        flex:1;
+        height:42px;
+        padding:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
         font-size:12px;
-
     }
 
     .categories{
