@@ -138,7 +138,7 @@ header{
 .heart-btn.active::before{
     content:"\2665";
     font-size:20px;
-    color:blue;
+    color:red;
 }
 
 .brand-box button{
@@ -1797,6 +1797,13 @@ footer{
     .right-actions{
         display:contents;
     }
+    #suggestions{
+        top: 270px !important;   /* Change this value as needed */
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+    }
 }
 
 /* ===================================================
@@ -1841,5 +1848,12 @@ footer{
 
     .right-actions{
         display:contents;
+    }
+    #suggestions{
+        top: 270px !important;   /* Change this value as needed */
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
     }
 }
