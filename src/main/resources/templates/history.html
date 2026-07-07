@@ -102,7 +102,7 @@
 
     function loadHistory(){
 
-        fetch("http://localhost:8080/api/history/" + userId)
+        fetch("/api/history/" + userId)
 
             .then(response => {
 
@@ -250,7 +250,7 @@ Remove
 
     function removeHistory(id){
 
-        fetch("http://localhost:8080/api/history/" + id,{
+        fetch("/api/history/" + id,{
 
             method:"DELETE"
 
@@ -287,8 +287,7 @@ Remove
 
         if(confirm("Clear all history?")){
 
-            fetch("http://localhost:8080/api/history/clear/" + userId,{
-
+            fetch("/api/history/clear/" + userId,{
                 method:"DELETE"
 
             })

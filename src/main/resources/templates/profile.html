@@ -194,22 +194,28 @@
         // ===============================
         // Load Favorites Count from MySQL
         // ===============================
-        fetch("http://localhost:8080/api/favorites/" + userId)
-            .then(response => response.json())
+        fetch("/api/favorites/" + userId)
+            .then(response => {
+                if (!response.ok) throw new Error("Failed to load favorites");
+                return response.json();
+            })
             .then(data => {
                 document.getElementById("favoriteCount").innerText = data.length;
             })
-            .catch(error => console.error(error));
+            .catch(error => console.error("Favorites:", error));
 
         // ===============================
         // Load History Count from MySQL
         // ===============================
-        fetch("http://localhost:8080/api/history/" + userId)
-            .then(response => response.json())
+        fetch("/api/history/" + userId)
+            .then(response => {
+                if (!response.ok) throw new Error("Failed to load history");
+                return response.json();
+            })
             .then(data => {
                 document.getElementById("historyCount").innerText = data.length;
             })
-            .catch(error => console.error(error));
+            .catch(error => console.error("History:", error));
 
         // Total Categories
         document.getElementById("categoryCount").innerText = 8;
