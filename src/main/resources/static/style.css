@@ -159,16 +159,6 @@ header{
     color:black;
 }
 
-.brand-box button:last-of-type:hover{
-    background:#1976d2;
-    transform:scale(1.05);
-}
-
-/* Visit Brand Button */
-.brand-box button:first-of-type{
-    background:whitesmoke;
-    color:black;
-}
 
 .brand-box button{
     border:none;
