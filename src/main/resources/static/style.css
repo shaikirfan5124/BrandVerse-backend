@@ -111,12 +111,6 @@ header{
     border:none;
     border-radius:50%;
     background:#f5f5f5;
-
-    font-size:24px;
-    cursor:pointer;
-    transition:0.3s;
-
-    color: transparent;
 }
 
 .heart-btn:hover,
@@ -1687,6 +1681,7 @@ footer{
 /* ===================================================
                 TABLETS (1024px)
 =================================================== */
+
 @media screen and (max-width:1024px){
 
     html,body{
@@ -1706,7 +1701,6 @@ footer{
     .search-container{
         flex:1;
         display:flex;
-        align-items:center;
         gap:10px;
     }
 
@@ -1716,7 +1710,6 @@ footer{
 
     .search-container button{
         width:120px;
-        margin:0;
     }
 
     .right-actions{
@@ -1725,22 +1718,16 @@ footer{
     }
 
     .categories{
-        display:grid !important;
-        grid-template-columns:repeat(2,1fr) !important;
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
         gap:20px;
         padding:20px;
     }
 
-    .category-box{
-        width:100% !important;
-        max-width:none;
-        margin:0;
-        padding:20px;
-    }
-
-    .brand-container{
-        display:grid !important;
-        grid-template-columns:repeat(3,1fr) !important;
+    .brand-container,
+    #favoritesContainer{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
         gap:18px;
     }
 
@@ -1750,12 +1737,80 @@ footer{
 
 }
 
+/* ======================================
+   HISTORY - TABLETS (1024px)
+====================================== */
+
+@media screen and (max-width:1024px){
+
+    .history-container{
+        width:95%;
+        margin:25px auto;
+    }
+
+    .history-card{
+        display:grid;
+        grid-template-columns:90px 1fr;
+        grid-template-areas:
+            "logo info"
+            "buttons buttons";
+        gap:18px;
+        padding:18px;
+    }
+
+    .history-left{
+        display:contents;
+    }
+
+    .history-logo{
+        grid-area:logo;
+        width:80px;
+        height:80px;
+        object-fit:contain;
+    }
+
+    .history-info{
+        grid-area:info;
+        text-align:left;
+    }
+
+    .history-info h2{
+        font-size:24px;
+        margin-bottom:10px;
+    }
+
+    .history-info p{
+        font-size:15px;
+        margin:4px 0;
+    }
+
+    .history-buttons{
+        grid-area:buttons;
+        display:flex;
+        justify-content:flex-end;
+        gap:12px;
+    }
+
+    .visit-btn,
+    .remove-btn{
+        padding:12px 18px;
+        font-size:14px;
+    }
+
+}
 
 /* ===================================================
                 MOBILE (768px)
 =================================================== */
 
 @media screen and (max-width:768px){
+
+    html,body{
+        width:100%;
+        overflow-x:hidden;
+    }
+
+    /* Top Section */
 
     .top-actions{
         display:grid;
@@ -1770,8 +1825,9 @@ footer{
 
     .search-container{
         grid-area:search;
-        display:flex !important;
+        display:flex;
         width:100%;
+        gap:8px;
     }
 
     #searchInput{
@@ -1790,20 +1846,146 @@ footer{
         grid-area:fav;
     }
 
-    .account-menu{
+    .account-menu,
+    .account-btn{
         grid-area:account;
     }
 
     .right-actions{
         display:contents;
     }
+
+    /* Suggestions */
+
     #suggestions{
-        top: 270px !important;   /* Change this value as needed */
-        width: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 9999;
+        top:270px !important;
+        width:90%;
+        left:50%;
+        transform:translateX(-50%);
+        z-index:9999;
     }
+
+    /* Categories */
+
+    .categories{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+        padding:15px;
+    }
+
+    .category-box{
+        width:100%;
+        padding:15px;
+    }
+
+    /* Brand Page */
+
+    .brand-container{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+        padding:15px;
+    }
+
+    .brand-box{
+        width:100%;
+        padding:12px;
+    }
+
+    .brand-box img{
+        width:90px;
+        height:90px;
+        object-fit:contain;
+    }
+
+    /* Favorites */
+
+    #favoritesContainer{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+        padding:15px;
+    }
+
+    #favoritesContainer .brand-box{
+        width:100%;
+        padding:12px;
+    }
+
+    #favoritesContainer img{
+        width:90px;
+        height:90px;
+        object-fit:contain;
+    }
+
+    #favoritesContainer button{
+        width:100%;
+        margin-top:8px;
+        font-size:13px;
+    }
+
+}
+/* ======================================
+   HISTORY - MOBILE (768px)
+====================================== */
+
+@media screen and (max-width:768px){
+
+    .history-container{
+        width:95%;
+        margin:20px auto;
+    }
+
+    .history-card{
+        display:grid;
+        grid-template-columns:70px 1fr;
+        grid-template-areas:
+            "logo info"
+            "buttons buttons";
+        gap:15px;
+        padding:15px;
+    }
+
+    .history-left{
+        display:contents;
+    }
+
+    .history-logo{
+        grid-area:logo;
+        width:60px;
+        height:60px;
+    }
+
+    .history-info{
+        grid-area:info;
+        text-align:left;
+    }
+
+    .history-info h2{
+        font-size:20px;
+        margin-bottom:8px;
+    }
+
+    .history-info p{
+        font-size:13px;
+        margin:3px 0;
+    }
+
+    .history-buttons{
+        grid-area:buttons;
+        display:flex;
+        gap:10px;
+        margin-top:10px;
+    }
+
+    .visit-btn,
+    .remove-btn{
+        flex:1;
+        padding:10px;
+        font-size:13px;
+    }
+
 }
 
 /* ===================================================
@@ -1823,7 +2005,8 @@ footer{
 
     .search-container{
         grid-area:search;
-        display:flex !important;
+        display:flex;
+        gap:5px;
     }
 
     #searchInput{
@@ -1832,28 +2015,121 @@ footer{
 
     .search-container button{
         width:80px;
-    }
-
-    .trending-btn{
-        grid-area:trend;
-    }
-
-    .favorite-btn{
-        grid-area:fav;
-    }
-
-    .account-menu{
-        grid-area:account;
+        font-size:12px;
     }
 
     .right-actions{
         display:contents;
     }
+
     #suggestions{
-        top: 270px !important;   /* Change this value as needed */
-        width: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 9999;
+        top:270px !important;
+        width:90%;
+        left:50%;
+        transform:translateX(-50%);
     }
+
+    .categories{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+        padding:10px;
+    }
+
+    .brand-container{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+        padding:10px;
+    }
+
+    #favoritesContainer{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+        padding:10px;
+    }
+
+    .brand-box img,
+    #favoritesContainer img{
+        width:70px;
+        height:70px;
+    }
+
+    .brand-box h3,
+    #favoritesContainer h3{
+        font-size:14px;
+    }
+
+    #favoritesContainer button{
+        width:100%;
+        font-size:12px;
+        padding:8px;
+    }
+
+}
+/* ======================================
+   HISTORY - SMALL MOBILE (480px)
+====================================== */
+
+@media screen and (max-width:480px){
+
+    .history-container{
+        width:98%;
+        margin:10px auto;
+    }
+
+    .history-title{
+        font-size:24px;
+    }
+
+    .history-card{
+        display:grid;
+        grid-template-columns:55px 1fr;
+        grid-template-areas:
+            "logo info"
+            "buttons buttons";
+        gap:10px;
+        padding:12px;
+    }
+
+    .history-left{
+        display:contents;
+    }
+
+    .history-logo{
+        grid-area:logo;
+        width:50px;
+        height:50px;
+    }
+
+    .history-info{
+        grid-area:info;
+        text-align:left;
+    }
+
+    .history-info h2{
+        font-size:17px;
+        margin-bottom:5px;
+    }
+
+    .history-info p{
+        font-size:11px;
+        margin:2px 0;
+    }
+
+    .history-buttons{
+        grid-area:buttons;
+        display:flex;
+        gap:8px;
+        margin-top:8px;
+    }
+
+    .visit-btn,
+    .remove-btn{
+        flex:1;
+        padding:8px;
+        font-size:11px;
+    }
+
 }
