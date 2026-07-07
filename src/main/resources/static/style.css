@@ -132,7 +132,7 @@ header{
 .heart-btn.active::before{
     content:"\2665";
     font-size:20px;
-    color:blue;
+    color:red;
 }
 
 .brand-box button{
@@ -303,8 +303,8 @@ body{
 #suggestions {
     position: absolute;
     top: 230px;          /* Adjust if needed */
-    left:0;
-    right:0;
+    left: 0;
+    right: 200px;
     margin:0 auto;
     width: 90%;
     max-width:600px;
@@ -464,36 +464,97 @@ body{
     margin:30px auto;
 
     display:grid;
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:20px;
 }
 
 /* Category Card Box */
+/* Category Box */
+
 .category-box{
+
     width:100%;
+    min-height:360px;      /* Taller than width */
+
     background:#fff;
 
-    padding:20px;
+    padding:25px;
 
-    border-radius:15px;
+    border-radius:18px;
 
-    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
 
     text-align:center;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:0.3s;
 
     box-sizing:border-box;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
 }
+
+/* Hover */
 
 .category-box:hover{
+
+    background:skyblue;
+
     transform:translateY(-6px);
-    box-shadow:10px 25px rgba(0,0,0,.18);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+
 }
 
+/* Image */
+
+.category-box img{
+
+    width:100%;
+    max-width:180px;
+    height:180px;
+
+    object-fit:contain;
+
+    transition:.3s;
+
+}
+
+/* Image Zoom */
+
+.category-box:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* Title */
+
+.category-box h3{
+
+    margin-top:18px;
+
+    font-size:28px;
+
+    color:#000;
+
+    font-weight:bold;
+
+}
+
+/* Title Color on Hover */
+
+.category-box:hover h3{
+
+    color:white;
+
+}
 
 /* Category Image */
 .category-box img{
@@ -1992,7 +2053,7 @@ footer{
             SMALL PHONES (480px)
 =================================================== */
 
-@media screen and (max-width:480px){
+@media screen and (max-width:400px){
 
     .top-actions{
         display:grid;
@@ -2023,7 +2084,7 @@ footer{
     }
 
     #suggestions{
-        top:270px !important;
+        top:250px !important;
         width:90%;
         left:50%;
         transform:translateX(-50%);
@@ -2036,11 +2097,27 @@ footer{
         padding:10px;
     }
 
+    .category-box{
+        height: 150px!important;
+        min-height:200px;
+        max-height:200px;
+    }
+
+    .category-box img {
+        width: 150px;
+        height: 150px;
+    }
+
     .brand-container{
         display:grid;
         grid-template-columns:repeat(2,1fr);
         gap:10px;
         padding:10px;
+    }
+
+    .brand-box{
+        width:140px;
+        height:150px;
     }
 
     #favoritesContainer{
@@ -2072,7 +2149,7 @@ footer{
    HISTORY - SMALL MOBILE (480px)
 ====================================== */
 
-@media screen and (max-width:480px){
+@media screen and (max-width:400px){
 
     .history-container{
         width:98%;
