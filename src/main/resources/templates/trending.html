@@ -28,65 +28,65 @@
 
     <!-- Nike -->
     <div class="brand-box"
-         onclick="openBrand('Nike','images/nike.png','https://www.nike.com')">
+         onclick="openBrand('Nike','images/Nike.png','https://www.nike.com')">
 
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Nike','images/nike.png','https://www.nike.com',this)">
+                onclick="addFavorite(event,'Nike','images/Nike.png','https://www.nike.com')">
         </button>
 
-        <img src="images/nike.png">
+        <img th:src="@{/images/Nike.png}" alt="Nike">
         <h3>Nike</h3>
 
     </div>
 
     <!-- Zara -->
     <div class="brand-box"
-         onclick="openBrand('Zara','images/zara.png','https://www.zara.com')">
+         onclick="openBrand('Zara','images/Zara.png','https://www.zara.com')">
 
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Zara','images/zara.png','https://www.zara.com',this)">
+                onclick="toggleFavorite(event,'Zara','images/Zara.png','https://www.zara.com',this)">
         </button>
 
-        <img src="images/zara.png">
+        <img src="images/Zara.png">
         <h3>Zara</h3>
 
     </div>
 
     <!-- Adidas -->
     <div class="brand-box"
-         onclick="openBrand('Adidas','images/adidas.png','https://www.adidas.co.in')">
+         onclick="openBrand('Adidas','images/Adidas.png','https://www.adidas.com')">
 
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Adidas','images/adidas.png','https://www.adidas.co.in',this)">
+                onclick="addFavorite(event,'Adidas','images/Adidas.png','https://www.adidas.com')">
         </button>
 
-        <img src="images/adidas.png">
+        <img th:src="@{/images/Adidas.png}" alt="Adidas">
         <h3>Adidas</h3>
 
     </div>
 
     <!-- H&M -->
     <div class="brand-box"
-         onclick="openBrand('H&M','images/hm.png','https://www2.hm.com')">
+         onclick="openBrand('H&M','images/HM.png','https://www.hm.com')">
 
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'H&M','images/hm.png','https://www2.hm.com',this)">
+                onclick="addFavorite(event,'H&M','images/HM.png','https://www.hm.com')">
         </button>
 
-        <img src="images/hm.png">
-        <h3>H&amp;M</h3>
+        <img th:src="@{/images/HM.png}" alt="H&M">
+        <h3>H&M</h3>
 
     </div>
 
     <!-- Uniqlo -->
     <div class="brand-box"
-         onclick="openBrand('Uniqlo','images/uniqlo.png','https://www.uniqlo.com')">
+         onclick="openBrand('Uniqlo','images/Uniqlo.png','https://www.uniqlo.com')">
 
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Uniqlo','images/uniqlo.png','https://www.uniqlo.com',this)">
+                onclick="addFavorite(event,'Uniqlo','images/Uniqlo.png','https://www.uniqlo.com')">
         </button>
 
-        <img src="images/uniqlo.png">
+        <img th:src="@{/images/Uniqlo.png}" alt="Uniqlo">
         <h3>Uniqlo</h3>
 
     </div>
@@ -99,69 +99,55 @@
 
 <div class="brand-container">
 
+
+    <!-- Nike -->
+    <div class="brand-box"
+         onclick="openBrand('Nike','/images/Nike.png','https://www.nike.com')">
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Nike','/images/Nike.png','https://www.nike.com')">
+        </button>
+        <img th:src="@{/images/Nike.png}" alt="Nike">
+        <h3>Nike</h3>
+    </div>
+
     <!-- Crocs -->
     <div class="brand-box"
-         onclick="openBrand('Crocs','images/crocs.png','https://www.crocs.in')">
-
+         onclick="openBrand('Crocs','/images/crocs.png','https://www.crocs.in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Crocs','images/crocs.png','https://www.crocs.in',this)">
+                onclick="addFavorite(event,'Crocs','/images/crocs.png','https://www.crocs.in')">
         </button>
-
-        <img src="../static/images/crocs.png">
+        <img th:src="@{/images/crocs.png}" alt="Crocs">
         <h3>Crocs</h3>
-
     </div>
 
     <!-- Puma -->
     <div class="brand-box"
-         onclick="openBrand('Puma','images/puma.png','https://in.puma.com')">
-
+         onclick="openBrand('Puma','/images/Puma.png','https://in.puma.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Puma','images/puma.png','https://in.puma.com',this)">
+                onclick="addFavorite(event,'Puma','/images/Puma.png','https://in.puma.com')">
         </button>
-
-        <img src="images/puma.png">
+        <img th:src="@{/images/Puma.png}" alt="Puma">
         <h3>Puma</h3>
-
     </div>
 
     <!-- Skechers -->
     <div class="brand-box"
-         onclick="openBrand('Skechers','images/skechers.png','https://www.skechers.in')">
-
+         onclick="openBrand('Skechers','/images/skechers.png','https://www.skechers.in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Skechers','images/skechers.png','https://www.skechers.in',this)">
+                onclick="addFavorite(event,'Skechers','/images/skechers.png','https://www.skechers.in')">
         </button>
-
-        <img src="../static/images/skechers.png">
+        <img th:src="@{/images/skechers.png}" alt="Skechers">
         <h3>Skechers</h3>
-
     </div>
 
     <!-- New Balance -->
     <div class="brand-box"
-         onclick="openBrand('New Balance','images/new-balance.png','https://www.newbalance.com')">
-
+         onclick="openBrand('New Balance','/images/new-balance.png','https://www.newbalance.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'New Balance','images/new-balance.png','https://www.newbalance.com',this)">
+                onclick="addFavorite(event,'New Balance','/images/new-balance.png','https://www.newbalance.com')">
         </button>
-
-        <img src="../static/images/new-balance.png">
+        <img th:src="@{/images/new-balance.png}" alt="New Balance">
         <h3>New Balance</h3>
-
-    </div>
-
-    <!-- Bata -->
-    <div class="brand-box"
-         onclick="openBrand('Bata','images/bata.png','https://www.bata.in')">
-
-        <button class="heart-btn"
-                onclick="toggleFavorite(event,'Bata','images/bata.png','https://www.bata.in',this)">
-        </button>
-
-        <img src="../static/images/bata.png">
-        <h3>Bata</h3>
-
     </div>
 
 </div>
@@ -174,67 +160,52 @@
 
     <!-- Apple -->
     <div class="brand-box"
-         onclick="openBrand('Apple','images/apple.png','https://www.apple.com')">
-
+         onclick="openBrand('Apple','/images/Apple.png','https://www.apple.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Apple','images/apple.png','https://www.apple.com',this)">
+                onclick="addFavorite(event,'Apple','/images/Apple.png','https://www.apple.com')">
         </button>
-
-        <img src="../static/images/apple.png" alt="Apple">
+        <img th:src="@{/images/Apple.png}" alt="Apple">
         <h3>Apple</h3>
-
     </div>
 
     <!-- Samsung -->
     <div class="brand-box"
-         onclick="openBrand('Samsung','images/samsung.png','https://www.samsung.com/in')">
-
+         onclick="openBrand('Samsung','/images/samsung.png','https://www.samsung.com/in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Samsung','images/samsung.png','https://www.samsung.com/in',this)">
+                onclick="addFavorite(event,'Samsung','/images/samsung.png','https://www.samsung.com/in')">
         </button>
-
-        <img src="../static/images/samsung.png" alt="Samsung">
+        <img th:src="@{/images/samsung.png}" alt="Samsung">
         <h3>Samsung</h3>
-
     </div>
 
-    <!-- Sony -->
+    <!-- Lenovo -->
     <div class="brand-box"
-         onclick="openBrand('Sony','images/sony.png','https://www.sony.co.in')">
-
+         onclick="openBrand('Lenovo','/images/lenovo.png','https://www.lenovo.com/in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Sony','images/sony.png','https://www.sony.co.in',this)">
+                onclick="addFavorite(event,'Lenovo','/images/lenovo.png','https://www.lenovo.com/in')">
         </button>
-
-        <img src="../static/images/sony.png" alt="Sony">
-        <h3>Sony</h3>
-
+        <img th:src="@{/images/lenovo.png}" alt="Lenovo">
+        <h3>Lenovo</h3>
     </div>
 
     <!-- Dell -->
     <div class="brand-box"
-         onclick="openBrand('Dell','images/dell.png','https://www.dell.com')">
-
+         onclick="openBrand('Dell','/images/dell.png','https://www.dell.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Dell','images/dell.png','https://www.dell.com',this)">
+                onclick="addFavorite(event,'Dell','/images/dell.png','https://www.dell.com')">
         </button>
-
-        <img src="../static/images/dell.png" alt="Dell">
+        <img th:src="@{/images/dell.png}" alt="Dell">
         <h3>Dell</h3>
-
     </div>
 
     <!-- HP -->
     <div class="brand-box"
-         onclick="openBrand('HP','images/hp.png','https://www.hp.com/in-en')">
-
+         onclick="openBrand('HP','/images/hp.png','https://www.hp.com/in-en')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'HP','images/hp.png','https://www.hp.com/in-en',this)">
+                onclick="addFavorite(event,'HP','/images/hp.png','https://www.hp.com/in-en')">
         </button>
-
-        <img src="../static/images/hp.png" alt="HP">
+        <img th:src="@{/images/hp.png}" alt="HP">
         <h3>HP</h3>
-
     </div>
 
 </div>
@@ -245,69 +216,54 @@
 
 <div class="brand-container">
 
-    <!-- L'Oréal -->
+    <!-- Lakme -->
     <div class="brand-box"
-         onclick="openBrand('LOréal','images/loreal.png','https://www.loreal.com')">
-
+         onclick="openBrand('Lakme','/images/lakme.png','https://www.lakmeindia.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'LOréal','images/loreal.png','https://www.loreal.com',this)">
+                onclick="addFavorite(event,'Lakme','/images/lakme.png','https://www.lakmeindia.com')">
         </button>
-
-        <img src="images/loreal.png" alt="L'Oréal">
-        <h3>L'Oréal</h3>
-
+        <img th:src="@{/images/lakme.png}" alt="Lakme">
+        <h3>Lakme</h3>
     </div>
 
     <!-- Maybelline -->
     <div class="brand-box"
-         onclick="openBrand('Maybelline','images/maybelline.png','https://www.maybelline.com')">
-
+         onclick="openBrand('Maybelline','/images/maybelline.png','https://www.maybelline.co.in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Maybelline','images/maybelline.png','https://www.maybelline.com',this)">
+                onclick="addFavorite(event,'Maybelline','/images/maybelline.png','https://www.maybelline.co.in')">
         </button>
-
-        <img src="../static/images/maybelline.png" alt="Maybelline">
+        <img th:src="@{/images/maybelline.png}" alt="Maybelline">
         <h3>Maybelline</h3>
-
-    </div>
-
-    <!-- Nivea -->
-    <div class="brand-box"
-         onclick="openBrand('Nivea','images/nivea.png','https://www.nivea.in')">
-
-        <button class="heart-btn"
-                onclick="toggleFavorite(event,'Nivea','images/nivea.png','https://www.nivea.in',this)">
-        </button>
-
-        <img src="images/nivea.png" alt="Nivea">
-        <h3>Nivea</h3>
-
-    </div>
-
-    <!-- Lakmé -->
-    <div class="brand-box"
-         onclick="openBrand('Lakmé','images/lakme.png','https://www.lakmeindia.com')">
-
-        <button class="heart-btn"
-                onclick="toggleFavorite(event,'Lakmé','images/lakme.png','https://www.lakmeindia.com',this)">
-        </button>
-
-        <img src="../static/images/lakme.png" alt="Lakmé">
-        <h3>Lakmé</h3>
-
     </div>
 
     <!-- MAC -->
     <div class="brand-box"
-         onclick="openBrand('MAC','images/mac.png','https://www.maccosmetics.com')">
-
+         onclick="openBrand('MAC','/images/mac.png','https://www.maccosmetics.in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'MAC','images/mac.png','https://www.maccosmetics.com',this)">
+                onclick="addFavorite(event,'MAC','/images/mac.png','https://www.maccosmetics.in')">
         </button>
-
-        <img src="../static/images/mac.png" alt="MAC">
+        <img th:src="@{/images/mac.png}" alt="MAC">
         <h3>MAC</h3>
+    </div>
 
+    <!-- Minimalist -->
+    <div class="brand-box"
+         onclick="openBrand('Minimalist','/images/minimalist.png','https://beminimalist.co')">
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Minimalist','/images/minimalist.png','https://beminimalist.co')">
+        </button>
+        <img th:src="@{/images/minimalist.png}" alt="Minimalist">
+        <h3>Minimalist</h3>
+    </div>
+
+    <!-- Cetaphil -->
+    <div class="brand-box"
+         onclick="openBrand('Cetaphil','/images/cetapil.png','https://www.cetaphil.co.in')">
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Cetaphil','/images/cetapil.png','https://www.cetaphil.co.in')">
+        </button>
+        <img th:src="@{/images/cetapil.png}" alt="Cetaphil">
+        <h3>Cetaphil</h3>
     </div>
 
 </div>
@@ -320,67 +276,52 @@
 
     <!-- Rolex -->
     <div class="brand-box"
-         onclick="openBrand('Rolex','images/rolex.png','https://www.rolex.com')">
-
+         onclick="openBrand('Rolex','/images/rolex.png','https://www.rolex.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Rolex','images/rolex.png','https://www.rolex.com',this)">
+                onclick="addFavorite(event,'Rolex','/images/rolex.png','https://www.rolex.com')">
         </button>
-
-        <img src="../static/images/rolex.png" alt="Rolex">
+        <img th:src="@{/images/rolex.png}" alt="Rolex">
         <h3>Rolex</h3>
-
     </div>
 
     <!-- Casio -->
     <div class="brand-box"
-         onclick="openBrand('Casio','images/casio.png','https://www.casio.com')">
-
+         onclick="openBrand('Casio','/images/casio.png','https://www.casio.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Casio','images/casio.png','https://www.casio.com',this)">
+                onclick="addFavorite(event,'Casio','/images/casio.png','https://www.casio.com')">
         </button>
-
-        <img src="../static/images/casio.png" alt="Casio">
+        <img th:src="@{/images/casio.png}" alt="Casio">
         <h3>Casio</h3>
-
-    </div>
-
-    <!-- Titan -->
-    <div class="brand-box"
-         onclick="openBrand('Titan','images/titan.png','https://www.titan.co.in')">
-
-        <button class="heart-btn"
-                onclick="toggleFavorite(event,'Titan','images/titan.png','https://www.titan.co.in',this)">
-        </button>
-
-        <img src="../static/images/titan.png" alt="Titan">
-        <h3>Titan</h3>
-
-    </div>
-
-    <!-- Fastrack -->
-    <div class="brand-box"
-         onclick="openBrand('Fastrack','images/fastrack.png','https://www.fastrack.in')">
-
-        <button class="heart-btn"
-                onclick="toggleFavorite(event,'Fastrack','images/fastrack.png','https://www.fastrack.in',this)">
-        </button>
-
-        <img src="../static/images/fastrack.png" alt="Fastrack">
-        <h3>Fastrack</h3>
-
     </div>
 
     <!-- Fossil -->
     <div class="brand-box"
-         onclick="openBrand('Fossil','images/fossil.png','https://www.fossil.com')">
-
+         onclick="openBrand('Fossil','/images/fossil.png','https://www.fossil.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Fossil','images/fossil.png','https://www.fossil.com',this)">
+                onclick="addFavorite(event,'Fossil','/images/fossil.png','https://www.fossil.com')">
         </button>
-
-        <img src="images/fossil.png" alt="Fossil">
+        <img th:src="@{/images/Fossil.png}" alt="Fossil">
         <h3>Fossil</h3>
+    </div>
 
+    <!-- Fastrack -->
+    <div class="brand-box"
+         onclick="openBrand('Fastrack','/images/fastrack.png','https://www.fastrack.in')">
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Fastrack','/images/fastrack.png','https://www.fastrack.in')">
+        </button>
+        <img th:src="@{/images/fastrack.png}" alt="Fastrack">
+        <h3>Fastrack</h3>
+    </div>
+
+    <!-- Titan -->
+    <div class="brand-box"
+         onclick="openBrand('Titan','/images/titan.png','https://www.titan.co.in')">
+        <button class="heart-btn"
+                onclick="addFavorite(event,'Titan','/images/titan.png','https://www.titan.co.in')">
+        </button>
+        <img th:src="@{/images/titan.png}" alt="Titan">
+        <h3>Titan</h3>
     </div>
 
 </div>
@@ -393,67 +334,52 @@
 
     <!-- IKEA -->
     <div class="brand-box"
-         onclick="openBrand('IKEA','images/ikea.png','https://www.ikea.com')">
-
+         onclick="openBrand('IKEA','/images/ikea.png','https://www.ikea.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'IKEA','images/ikea.png','https://www.ikea.com',this)">
+                onclick="addFavorite(event,'IKEA','/images/ikea.png','https://www.ikea.com')">
         </button>
-
-        <img src="../static/images/ikea.png" alt="IKEA">
+        <img th:src="@{/images/ikea.png}" alt="IKEA">
         <h3>IKEA</h3>
-
     </div>
 
     <!-- Home Centre -->
     <div class="brand-box"
-         onclick="openBrand('Home Centre','images/homecentre.png','https://www.homecentre.in')">
-
+         onclick="openBrand('Home Centre','/images/homecentre.png','https://www.homecentre.in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Home Centre','images/homecentre.png','https://www.homecentre.in',this)">
+                onclick="addFavorite(event,'Home Centre','/images/homecentre.png','https://www.homecentre.in')">
         </button>
-
-        <img src="../static/images/homecentre.png" alt="Home Centre">
+        <img th:src="@{/images/homecentre.png}" alt="Home Centre">
         <h3>Home Centre</h3>
-
     </div>
 
-    <!-- Pepperfry -->
+    <!-- LG -->
     <div class="brand-box"
-         onclick="openBrand('Pepperfry','images/pepperfry.png','https://www.pepperfry.com')">
-
+         onclick="openBrand('LG','/images/lg.png','https://www.lg.com/in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Pepperfry','images/pepperfry.png','https://www.pepperfry.com',this)">
+                onclick="addFavorite(event,'LG','/images/lg.png','https://www.lg.com/in')">
         </button>
-
-        <img src="../static/images/pepperfry.png" alt="Pepperfry">
-        <h3>Pepperfry</h3>
-
+        <img th:src="@{/images/lg.png}" alt="LG">
+        <h3>LG</h3>
     </div>
 
-    <!-- Urban Ladder -->
+    <!-- Samsung -->
     <div class="brand-box"
-         onclick="openBrand('Urban Ladder','images/urbanladder.png','https://www.urbanladder.com')">
-
+         onclick="openBrand('Samsung','/images/samsung.png','https://www.samsung.com/in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Urban Ladder','images/urbanladder.png','https://www.urbanladder.com',this)">
+                onclick="addFavorite(event,'Samsung','/images/samsung.png','https://www.samsung.com/in')">
         </button>
-
-        <img src="../static/images/urbanladder.png" alt="Urban Ladder">
-        <h3>Urban Ladder</h3>
-
+        <img th:src="@{/images/samsung.png}" alt="Samsung">
+        <h3>Samsung</h3>
     </div>
 
-    <!-- D'Decor -->
+    <!-- Hawkins -->
     <div class="brand-box"
-         onclick="openBrand('DDecor','images/ddecor.png','https://www.ddecor.com')">
-
+         onclick="openBrand('Hawkins','/images/hawkins.png','https://www.hawkinscookers.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'DDecor','images/ddecor.png','https://www.ddecor.com',this)">
+                onclick="addFavorite(event,'Hawkins','/images/hawkins.png','https://www.hawkinscookers.com')">
         </button>
-
-        <img src="images/ddecor.png" alt="D'Decor">
-        <h3>D'Decor</h3>
-
+        <img th:src="@{/images/hawkins.png}" alt="Hawkins">
+        <h3>Hawkins</h3>
     </div>
 
 </div>
@@ -465,73 +391,57 @@
 <div class="brand-container">
 
     <!-- Decathlon -->
+    <!-- Decathlon -->
     <div class="brand-box"
-         onclick="openBrand('Decathlon','images/decathlon.png','https://www.decathlon.in')">
-
+         onclick="openBrand('Decathlon','/images/decathlon.png','https://www.decathlon.in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Decathlon','images/decathlon.png','https://www.decathlon.in',this)">
+                onclick="addFavorite(event,'Decathlon','/images/decathlon.png','https://www.decathlon.in')">
         </button>
-
-        <img src="../static/images/decathlon.png" alt="Decathlon">
+        <img th:src="@{/images/decathlon.png}" alt="Decathlon">
         <h3>Decathlon</h3>
-
     </div>
 
     <!-- Yonex -->
     <div class="brand-box"
-         onclick="openBrand('Yonex','images/yonex.png','https://www.yonex.com')">
-
+         onclick="openBrand('Yonex','/images/yonex.png','https://www.yonex.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Yonex','images/yonex.png','https://www.yonex.com',this)">
+                onclick="addFavorite(event,'Yonex','/images/yonex.png','https://www.yonex.com')">
         </button>
-
-        <img src="../static/images/yonex.png" alt="Yonex">
+        <img th:src="@{/images/yonex.png}" alt="Yonex">
         <h3>Yonex</h3>
-
     </div>
 
     <!-- Under Armour -->
     <div class="brand-box"
-         onclick="openBrand('Under Armour','images/under-armour.png','https://www.underarmour.com')">
-
+         onclick="openBrand('Under Armour','/images/Under-Armour.png','https://www.underarmour.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Under Armour','images/under-armour.png','https://www.underarmour.com',this)">
+                onclick="addFavorite(event,'Under Armour','/images/under-armour.png','https://www.underarmour.com')">
         </button>
-
-        <img src="images/under-armour.png" alt="Under Armour">
+        <img th:src="@{/images/Under-Armour.png}" alt="Under Armour">
         <h3>Under Armour</h3>
-
     </div>
 
     <!-- Nike -->
     <div class="brand-box"
-         onclick="openBrand('Nike','images/nike.png','https://www.nike.com')">
-
+         onclick="openBrand('Nike','/images/Nike.png','https://www.nike.com')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Nike','images/nike.png','https://www.nike.com',this)">
+                onclick="addFavorite(event,'Nike','/images/Nike.png','https://www.nike.com')">
         </button>
-
-        <img src="images/nike.png" alt="Nike">
+        <img th:src="@{/images/Nike.png}" alt="Nike">
         <h3>Nike</h3>
-
     </div>
 
     <!-- Adidas -->
     <div class="brand-box"
-         onclick="openBrand('Adidas','images/adidas.png','https://www.adidas.co.in')">
-
+         onclick="openBrand('Adidas','/images/Adidas.png','https://www.adidas.co.in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'Adidas','images/adidas.png','https://www.adidas.co.in',this)">
+                onclick="addFavorite(event,'Adidas','/images/Adidas.png','https://www.adidas.co.in')">
         </button>
-
-        <img src="images/adidas.png" alt="Adidas">
+        <img th:src="@{/images/Adidas.png}" alt="Adidas">
         <h3>Adidas</h3>
-
     </div>
 
 </div>
-
-<!-- ===================== LUXURY ===================== -->
 
 <!-- ===================== TRAVEL ===================== -->
 
@@ -541,74 +451,53 @@
 
     <!-- American Tourister -->
     <div class="brand-box"
-         onclick="openBrand('American Tourister','images/americantourister.png','https://www.americantourister.in')">
-
+         onclick="openBrand('American Tourister','/images/american tourister.png','https://www.americantourister.in')">
         <button class="heart-btn"
-                onclick="toggleFavorite(event,'American Tourister','images/americantourister.png','https://www.americantourister.in',this)">
+                onclick="addFavorite(event,'American Tourister','/images/american tourister.png','https://www.americantourister.in')">
         </button>
-
-        <img src="../static/images/american%20tourister.png" alt="American Tourister">
-
+        <img th:src="@{/images/american tourister.png}" alt="American Tourister">
         <h3>American Tourister</h3>
-
+    </div>
     </div>
 
-    <!-- Samsonite -->
-    <div class="brand-box"
-         onclick="openBrand('Samsonite','images/samsonite.png','https://www.samsonite.in')">
+<!-- Samsonite -->
+<div class="brand-box"
+     onclick="openBrand('Samsonite','/images/samsonite.png','https://www.samsonite.in')">
+    <button class="heart-btn"
+            onclick="addFavorite(event,'Samsonite','/images/samsonite.png','https://www.samsonite.in')">
+    </button>
+    <img th:src="@{/images/samsonite.png}" alt="Samsonite">
+    <h3>Samsonite</h3>
+</div>
 
-        <button class="heart-btn"
-                onclick="toggleFavorite(event,'Samsonite','images/samsonite.png','https://www.samsonite.in',this)">
-        </button>
+<!-- VIP -->
+<div class="brand-box"
+     onclick="openBrand('VIP','/images/vip.png','https://www.vipindustries.co.in')">
+    <button class="heart-btn"
+            onclick="addFavorite(event,'VIP','/images/vip.png','https://www.vipindustries.co.in')">
+    </button>
+    <img th:src="@{/images/vip.png}" alt="VIP">
+    <h3>VIP</h3>
+</div>
 
-        <img src="../static/images/samsonite.png" alt="Samsonite">
+<!-- Safari -->
+<div class="brand-box"
+     onclick="openBrand('Safari','/images/safari.png','https://www.safari.in')">
+    <button class="heart-btn"
+            onclick="addFavorite(event,'Safari','/images/safari.png','https://www.safari.in')">
+    </button>
+    <img th:src="@{/images/safari.png}" alt="Safari">
+    <h3>Safari</h3>
+</div>
 
-        <h3>Samsonite</h3>
-
-    </div>
-
-    <!-- VIP -->
-    <div class="brand-box"
-         onclick="openBrand('VIP','images/vip.png','https://www.vipindustries.co.in')">
-
-        <button class="heart-btn"
-                onclick="toggleFavorite(event,'VIP','images/vip.png','https://www.vipindustries.co.in',this)">
-        </button>
-
-        <img src="../static/images/vip.png" alt="VIP">
-
-        <h3>VIP</h3>
-
-    </div>
-
-    <!-- Safari -->
-    <div class="brand-box"
-         onclick="openBrand('Safari','images/safari.png','https://www.safari.in')">
-
-        <button class="heart-btn"
-                onclick="toggleFavorite(event,'Safari','images/safari.png','https://www.safari.in',this)">
-        </button>
-
-        <img src="../static/images/safari.png" alt="Safari">
-
-        <h3>Safari</h3>
-
-    </div>
-
-    <!-- Wildcraft -->
-    <div class="brand-box"
-         onclick="openBrand('Wildcraft','images/wildcraft.png','https://wildcraft.com')">
-
-        <button class="heart-btn"
-                onclick="toggleFavorite(event,'Wildcraft','images/wildcraft.png','https://wildcraft.com',this)">
-        </button>
-
-        <img src="../static/images/wildcraft.png" alt="Wildcraft">
-
-        <h3>Wildcraft</h3>
-
-    </div>
-
+<!-- Wildcraft -->
+<div class="brand-box"
+     onclick="openBrand('Wildcraft','/images/wildcraft.png','https://wildcraft.com')">
+    <button class="heart-btn"
+            onclick="addFavorite(event,'Wildcraft','/images/wildcraft.png','https://wildcraft.com')">
+    </button>
+    <img th:src="@{/images/wildcraft.png}" alt="Wildcraft">
+    <h3>Wildcraft</h3>
 </div>
 
 

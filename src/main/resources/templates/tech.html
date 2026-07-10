@@ -23,26 +23,14 @@
 
 <div class="brand-container">
 
-    <!-- Apple -->
-    <div class="brand-box"
-         onclick="openBrand('Apple','images/apple.png','https://www.apple.com')">
-
-        <button class="heart-btn"
-                onclick="addFavorite(event,'Apple','images/apple.png','https://www.apple.com')">
-        </button>
-
-        <img src="../static/images/Apple.png" alt="Apple">
-        <h3>Apple</h3>
-
-    </div>
 
     <!-- Apple -->
     <div class="brand-box"
-         onclick="openBrand('Apple','/images/apple.png','https://www.apple.com')">
+         onclick="openBrand('Apple','/images/Apple.png','https://www.apple.com')">
         <button class="heart-btn"
-                onclick="addFavorite(event,'Apple','/images/apple.png','https://www.apple.com')">
+                onclick="addFavorite(event,'Apple','/images/Apple.png','https://www.apple.com')">
         </button>
-        <img th:src="@{/images/apple.png}" alt="Apple">
+        <img th:src="@{/images/Apple.png}" alt="Apple">
         <h3>Apple</h3>
     </div>
 
