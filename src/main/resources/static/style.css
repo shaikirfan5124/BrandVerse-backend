@@ -1866,12 +1866,13 @@ footer{
 
 @media screen and (max-width:768px){
 
-    html,body{
+    html,
+    body{
         width:100%;
         overflow-x:hidden;
     }
 
-    /* Top Section */
+    /* ---------- TOP SECTION ---------- */
 
     .top-actions{
         display:grid;
@@ -1887,8 +1888,8 @@ footer{
     .search-container{
         grid-area:search;
         display:flex;
-        width:100%;
         gap:8px;
+        width:100%;
     }
 
     #searchInput{
@@ -1916,76 +1917,170 @@ footer{
         display:contents;
     }
 
+    /* Hide Home Button */
+
+    .home-btn,
+    .gohome-btn{
+        display:none !important;
+    }
+
     /* Suggestions */
 
     #suggestions{
-        top:270px !important;
+        top:250px !important;
         width:90%;
         left:50%;
         transform:translateX(-50%);
-        z-index:9999;
     }
 
-    /* Categories */
+    /* ==================================
+            CATEGORY BOXES
+    ================================== */
 
     .categories{
         display:grid;
         grid-template-columns:repeat(2,1fr);
-        gap:15px;
-        padding:15px;
+        gap:16px;
+        padding:16px;
     }
 
     .category-box{
+
         width:100%;
+        height:190px;
+        min-height:190px;
+
         padding:15px;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+
+        border-radius:18px;
+        box-sizing:border-box;
     }
 
-    /* Brand Page */
+    .category-box img{
+
+        width:120px;
+        height:120px;
+
+        object-fit:contain;
+    }
+
+    .category-box h3{
+
+        font-size:20px;
+        margin-top:10px;
+    }
+
+    /* ==================================
+              BRAND BOXES
+    ================================== */
 
     .brand-container{
+
         display:grid;
         grid-template-columns:repeat(2,1fr);
+
         gap:15px;
         padding:15px;
     }
 
     .brand-box{
+
         width:100%;
-        padding:12px;
+        height:165px;
+
+        padding:15px;
+
+        border-radius:16px;
+        box-sizing:border-box;
+
+        position:relative;
     }
 
     .brand-box img{
-        width:90px;
-        height:90px;
+
+        width:85px;
+        height:85px;
+
         object-fit:contain;
+        display:block;
+        margin:auto;
     }
 
-    /* Favorites */
+    .brand-box h3{
+
+        font-size:15px;
+        margin-top:8px;
+    }
+
+    .heart-btn{
+
+        width:40px;
+        height:40px;
+
+        top:8px;
+        right:8px;
+    }
+
+    /* ==================================
+              FAVORITES
+    ================================== */
 
     #favoritesContainer{
+
         display:grid;
         grid-template-columns:repeat(2,1fr);
+
         gap:15px;
         padding:15px;
     }
 
     #favoritesContainer .brand-box{
+
         width:100%;
-        padding:12px;
+        height:165px;
+
+        padding:15px;
     }
 
     #favoritesContainer img{
-        width:90px;
-        height:90px;
+
+        width:85px;
+        height:85px;
+
         object-fit:contain;
     }
 
     #favoritesContainer button{
+
         width:100%;
         margin-top:8px;
         font-size:13px;
     }
 
+}
+/* Remove hover effect for Category Boxes */
+.category-box:hover{
+    transform:none;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.category-box:hover img{
+    transform:none;
+}
+
+.category-box:hover h3{
+    color:#000;
+}
+
+/* Remove hover effect for Brand Boxes */
+.brand-box:hover{
+    transform:none;
 }
 /* ======================================
    HISTORY - MOBILE (768px)
@@ -2045,6 +2140,50 @@ footer{
         flex:1;
         padding:10px;
         font-size:13px;
+    }
+
+}
+
+/* ==========================
+   BRAND BOX - MOBILE
+========================== */
+
+@media screen and (max-width:768px){
+
+    .brand-container{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+        padding:15px;
+    }
+
+    .brand-box{
+        position:relative;
+        width:100%;
+        height:155px;
+        padding:15px 10px;
+        border-radius:16px;
+        box-sizing:border-box;
+    }
+
+    .brand-box img{
+        width:90px;
+        height:90px;
+        object-fit:contain;
+        margin:0 auto 10px;
+        display:block;
+    }
+
+    .brand-box h3{
+        font-size:16px;
+        margin-top:5px;
+    }
+
+    .heart-btn{
+        width:40px;
+        height:40px;
+        top:8px;
+        right:8px;
     }
 
 }
@@ -2143,7 +2282,31 @@ footer{
         font-size:12px;
         padding:8px;
     }
+    /* Hide Home button on mobile */
+    .home-btn,
+    .gohome-btn{
+        display: none !important;
+    }
 
+}
+/* Remove hover effect for Category Boxes */
+.category-box:hover{
+    transform:none;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.category-box:hover img{
+    transform:none;
+}
+
+.category-box:hover h3{
+    color:#000;
+}
+
+/* Remove hover effect for Brand Boxes */
+.brand-box:hover{
+    transform:none;
 }
 /* ======================================
    HISTORY - SMALL MOBILE (480px)
@@ -2207,6 +2370,72 @@ footer{
         flex:1;
         padding:8px;
         font-size:11px;
+    }
+
+}
+/* Remove hover effect for Category Boxes */
+.category-box:hover{
+    transform:none;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.category-box:hover img{
+    transform:none;
+}
+
+.category-box:hover h3{
+    color:#000;
+}
+
+/* Remove hover effect for Brand Boxes */
+.brand-box:hover{
+    transform:none;
+}
+/* ==========================
+   BRAND BOX - SMALL MOBILE
+========================== */
+
+@media screen and (max-width:480px){
+
+    .brand-container{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+        padding:12px;
+    }
+
+    .brand-box{
+        position:relative;
+        width:100%;
+        height:145px;
+        padding:12px 8px;
+        border-radius:14px;
+        box-sizing:border-box;
+    }
+
+    .brand-box img{
+        width:75px;
+        height:75px;
+        object-fit:contain;
+        margin:0 auto 8px;
+        display:block;
+    }
+
+    .brand-box h3{
+        font-size:14px;
+        margin-top:5px;
+    }
+
+    .heart-btn{
+        width:36px;
+        height:36px;
+        top:6px;
+        right:6px;
+    }
+
+    .heart-btn::before{
+        font-size:18px;
     }
 
 }
