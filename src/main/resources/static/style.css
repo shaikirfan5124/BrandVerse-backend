@@ -748,7 +748,38 @@ body{
     color:black;
 }
 
+/* ===========================
+   FORCE HOVER ON PC
+=========================== */
+@media (hover: hover) and (pointer: fine){
 
+    .category-box{
+        transition: all .3s ease;
+    }
+
+    .category-box:hover{
+        background: skyblue !important;
+        transform: translateY(-6px) !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,.2) !important;
+    }
+
+    .category-box:hover img{
+        transform: scale(1.08) !important;
+    }
+
+    .category-box:hover h3{
+        color: white !important;
+    }
+
+    .brand-box{
+        transition: all .3s ease;
+    }
+
+    .brand-box:hover{
+        transform: scale(1.05) !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,.2) !important;
+    }
+}
 
 /* =========================
    Full screen dark overlay
@@ -1671,6 +1702,37 @@ footer{
     padding:15px;
 }
 
+/* ==========================
+   PC HOVER ONLY
+========================== */
+
+@media (min-width: 769px){
+
+    .category-box:hover{
+        background: skyblue;
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0,0,0,.2);
+    }
+
+    .category-box:hover img{
+        transform: scale(1.08);
+    }
+
+    .category-box:hover h3{
+        color: white;
+    }
+
+    .brand-box{
+        transition: .3s ease;
+    }
+
+    .brand-box:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0,0,0,.2);
+    }
+
+}
+
 /* =========================
         TABLETS
 ========================= */
@@ -2297,24 +2359,28 @@ footer{
     }
 
 }
-/* Remove hover effect for Category Boxes */
-.category-box:hover{
-    transform:none;
-    background:#fff;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
+/* Remove hover effect only on Mobile */
+@media screen and (max-width:768px){
 
-.category-box:hover img{
-    transform:none;
-}
+    .category-box:hover{
+        transform:none;
+        background:#fff;
+        box-shadow:0 5px 15px rgba(0,0,0,.15);
+    }
 
-.category-box:hover h3{
-    color:#000;
-}
+    .category-box:hover img{
+        transform:none;
+    }
 
-/* Remove hover effect for Brand Boxes */
-.brand-box:hover{
-    transform:none;
+    .category-box:hover h3{
+        color:#000;
+    }
+
+    .brand-box:hover{
+        transform:none;
+        box-shadow:0 0 10px rgba(0,0,0,.2);
+    }
+
 }
 /* ======================================
    HISTORY - SMALL MOBILE (480px)
@@ -2381,24 +2447,28 @@ footer{
     }
 
 }
-/* Remove hover effect for Category Boxes */
-.category-box:hover{
-    transform:none;
-    background:#fff;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
+/* Remove hover effect only on Small Phones */
+@media screen and (max-width:480px){
 
-.category-box:hover img{
-    transform:none;
-}
+    .category-box:hover{
+        transform:none;
+        background:#fff;
+        box-shadow:0 5px 15px rgba(0,0,0,.15);
+    }
 
-.category-box:hover h3{
-    color:#000;
-}
+    .category-box:hover img{
+        transform:none;
+    }
 
-/* Remove hover effect for Brand Boxes */
-.brand-box:hover{
-    transform:none;
+    .category-box:hover h3{
+        color:#000;
+    }
+
+    .brand-box:hover{
+        transform:none;
+        box-shadow:0 0 10px rgba(0,0,0,.2);
+    }
+
 }
 /* ==========================
    BRAND BOX - SMALL MOBILE
