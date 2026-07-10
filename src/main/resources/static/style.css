@@ -502,15 +502,6 @@ body{
 
 /* Hover */
 
-.category-box:hover{
-
-    background:skyblue;
-
-    transform:translateY(-6px);
-
-    box-shadow:0 10px 25px rgba(0,0,0,.20);
-
-}
 
 /* Image */
 
@@ -526,13 +517,6 @@ body{
 
 }
 
-/* Image Zoom */
-
-.category-box:hover img{
-
-    transform:scale(1.08);
-
-}
 
 /* Title */
 
@@ -675,9 +659,6 @@ body{
     object-fit:contain;
 }
 
-.brand-box:hover{
-    transform:scale(1.05);
-}
 
 /* Full Screen Website Viewer */
 
