@@ -2,6 +2,7 @@ package com.brandverse.service;
 
 import com.brandverse.entity.History;
 import com.brandverse.repository.HistoryRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,11 +25,13 @@ public class HistoryService {
     }
 
     // Delete One History
+    @Transactional
     public void deleteHistory(Long id){
         repository.deleteById(id);
     }
 
     // Clear All History
+    @Transactional
     public void clearHistory(Long userId){
         repository.deleteAllByUserId(userId);
     }
