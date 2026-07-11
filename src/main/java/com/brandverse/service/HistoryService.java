@@ -15,32 +15,22 @@ public class HistoryService {
 
     // Save History
     public History saveHistory(History history){
-
         return repository.save(history);
-
     }
 
     // Get User History
     public List<History> getHistory(Long userId){
-
         return repository.findByUserId(userId);
-
     }
 
     // Delete One History
     public void deleteHistory(Long id){
-
         repository.deleteById(id);
-
     }
 
     // Clear All History
     public void clearHistory(Long userId){
-
-        List<History> list = repository.findByUserId(userId);
-
-        repository.deleteAll(list);
-
+        repository.deleteAllByUserId(userId);
     }
 
 }

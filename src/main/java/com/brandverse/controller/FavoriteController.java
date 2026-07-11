@@ -32,10 +32,10 @@ public class FavoriteController {
     public void deleteFavorite(@PathVariable Long id) {
         service.deleteById(id);
     }
+
     // ❤️ Remove Favorite by UserId + Brand Name
     @DeleteMapping("/remove")
     public void removeFavorite(@RequestBody Favorite favorite) {
-
         service.removeFavorite(
                 favorite.getUserId(),
                 favorite.getBrandName()
@@ -43,4 +43,11 @@ public class FavoriteController {
 
     }
 
+    // ❤️ Clear All Favorites
+    @DeleteMapping("/clear/{userId}")
+    public void clearFavorites(@PathVariable Long userId) {
+
+        service.clearFavorites(userId);
+
+    }
 }

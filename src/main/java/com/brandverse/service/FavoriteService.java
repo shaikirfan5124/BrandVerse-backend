@@ -52,5 +52,11 @@ public class FavoriteService {
         repository.deleteByUserIdAndBrandName(userId, brandName);
 
     }
+    // ❤️ Clear All Favorites of User
+    public void clearFavorites(Long userId){
+
+        repository.deleteAllByUserId(userId);
+
+    }
 
 }

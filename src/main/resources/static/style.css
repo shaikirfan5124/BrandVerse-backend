@@ -164,6 +164,16 @@ header{
     margin:5px;
     transition:all 0.3s ease;
 }
+
+.remove-btn{
+    background:#000000;
+    color:#fff;
+}
+
+.visit-btn{
+    background:#000000;
+    color:#fff;
+}
 /*login page*/
 body{
     margin:0;
@@ -2078,43 +2088,49 @@ footer{
         transform: translate(-2px, 2px);
     }
 
-    /* ==================================
-              FAVORITES
-    ================================== */
+    /* ==========================
+       FAVORITES - MOBILE
+    ========================== */
 
-    #favoritesContainer{
+    @media screen and (max-width:768px){
 
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
+        #favoritesContainer{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:15px;
+            padding:15px;
+        }
 
-        gap:15px;
-        padding:15px;
-    }
+        #favoritesContainer .brand-box{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
 
-    #favoritesContainer .brand-box{
+            height:280px;
+            padding:15px;
+            box-sizing:border-box;
+        }
 
-        width:100%;
-        height:165px;
+        #favoritesContainer img{
+            width:80px;
+            height:80px;
+            object-fit:contain;
+            margin-bottom:10px;
+        }
 
-        padding:15px;
-    }
+        #favoritesContainer h3{
+            font-size:15px;
+            text-align:center;
+            margin-bottom:15px;
+        }
 
-    #favoritesContainer img{
-
-        width:85px;
-        height:85px;
-
-        object-fit:contain;
-    }
-
-    #favoritesContainer button{
-
-        width:100%;
-        margin-top:8px;
-        font-size:13px;
-    }
-
-}
+        #favoritesContainer button{
+            width:100%;
+            padding:9px;
+            margin-top:8px;
+            border-radius:25px;
+        }
+    }}
 /* Remove hover effect for Category Boxes */
 .category-box:hover{
     transform:none;
@@ -2134,6 +2150,7 @@ footer{
 .brand-box:hover{
     transform:none;
 }
+
 /* ======================================
    HISTORY - MOBILE (768px)
 ====================================== */
@@ -2311,29 +2328,47 @@ footer{
         height:150px;
     }
 
-    #favoritesContainer{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
-        padding:10px;
+    @media screen and (max-width:480px){
+
+        #favoritesContainer{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:10px;
+            padding:10px;
+        }
+
+        #favoritesContainer .brand-box{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+
+            height:250px;
+            padding:10px;
+            box-sizing:border-box;
+        }
+
+        #favoritesContainer img{
+            width:65px;
+            height:65px;
+            object-fit:contain;
+            margin-bottom:8px;
+        }
+
+        #favoritesContainer h3{
+            font-size:13px;
+            text-align:center;
+            margin-bottom:10px;
+        }
+
+        #favoritesContainer button{
+            width:100%;
+            padding:8px;
+            margin-top:6px;
+            font-size:12px;
+            border-radius:20px;
+        }
     }
 
-    .brand-box img,
-    #favoritesContainer img{
-        width:70px;
-        height:70px;
-    }
-
-    .brand-box h3,
-    #favoritesContainer h3{
-        font-size:14px;
-    }
-
-    #favoritesContainer button{
-        width:100%;
-        font-size:12px;
-        padding:8px;
-    }
     /* Hide Home button on mobile */
     .home-btn,
     .gohome-btn{

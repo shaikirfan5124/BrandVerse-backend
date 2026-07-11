@@ -98,68 +98,26 @@
     </div>
 </div>
 
-    <script>
+<script>
 
-        // ===============================
-        // Load Saved Settings
-        // ===============================
+    // =======================================
+    // PAGE LOAD
+    // =======================================
 
-        window.onload = function () {
+    window.onload = function () {
 
-            // Theme
-            let savedTheme = localStorage.getItem("theme") || "light";
-
-            document.querySelector(`input[value="${savedTheme}"]`).checked = true;
-
-            applyTheme(savedTheme);
-
-            // Language
-            language.value = localStorage.getItem("language") || "English";
-
-            // Notifications
-            notificationToggle.checked =
-                localStorage.getItem("notifications") !== "false";
-
-            // Privacy
-            historyToggle.checked =
-                localStorage.getItem("saveHistory") !== "false";
-
-            searchToggle.checked =
-                localStorage.getItem("saveSearch") !== "false";
-
-            favoriteToggle.checked =
-                localStorage.getItem("saveFavorites") !== "false";
-
-        };
-
-
-        // ===============================
+        // -----------------------------
         // Theme
-        // ===============================
-
-        // ===============================
-        // Theme
-        // ===============================
+        // -----------------------------
 
         const themeRadios = document.querySelectorAll("input[name='theme']");
-
-        // Load Saved Theme
         const savedTheme = localStorage.getItem("theme") || "light";
 
         themeRadios.forEach(radio => {
 
             if(radio.value === savedTheme){
-
                 radio.checked = true;
-
             }
-
-        });
-
-        applyTheme(savedTheme);
-
-        // Save Theme
-        themeRadios.forEach(radio => {
 
             radio.addEventListener("change", function(){
 
@@ -171,37 +129,19 @@
 
         });
 
-        // Apply Theme Function
-        function applyTheme(theme){
+        applyTheme(savedTheme);
 
-            if(theme === "dark"){
 
-                document.body.classList.add("dark-mode");
-
-            }
-
-            else{
-
-                document.body.classList.remove("dark-mode");
-
-            }
-
-        }
-
-        // ===============================
+        // -----------------------------
         // Language
-        // ===============================
+        // -----------------------------
 
         const language = document.getElementById("language");
 
-        // Load Saved Language
-        const savedLanguage =
+        language.value =
             localStorage.getItem("language") || "English";
 
-        language.value = savedLanguage;
-
-        // Save & Apply Language
-        language.addEventListener("change", function () {
+        language.addEventListener("change", function(){
 
             localStorage.setItem("language", this.value);
 
@@ -214,18 +154,16 @@
         });
 
 
-        // ===============================
+        // -----------------------------
         // Notifications
-        // ===============================
+        // -----------------------------
 
         const notificationToggle =
             document.getElementById("notificationToggle");
 
-        // Load Saved Notification Setting
         notificationToggle.checked =
             localStorage.getItem("notifications") !== "false";
 
-        // Save Notification Setting
         notificationToggle.onchange = function(){
 
             localStorage.setItem(
@@ -235,50 +173,210 @@
 
         };
 
+    };
 
 
-        // ===============================
-        // Data
-        // ===============================
+    // =======================================
+    // APPLY THEME
+    // =======================================
 
-        function clearHistory(){
+    function applyTheme(theme){
 
-            localStorage.removeItem("history");
+        if(theme === "dark"){
 
-            alert("History Cleared");
+            document.body.classList.add("dark-mode");
 
-        }
+        }else{
 
-        function clearSearchHistory(){
-
-            localStorage.removeItem("searchHistory");
-
-            alert("Search History Cleared");
+            document.body.classList.remove("dark-mode");
 
         }
 
-        function clearFavorites(){
+    }
 
-            localStorage.removeItem("favorites");
 
-            alert("Favorites Cleared");
+    // =======================================
+    // CLEAR FAVORITES
+    // =======================================
+
+    function clearFavorites(){
+
+        const userId = localStorage.getItem("userId");
+
+        if(!userId){
+
+            alert("Please Login First");
+
+            return;
 
         }
 
-        function clearAllData(){
+        if(!confirm("Are you sure you want to clear all favorite brands?")){
 
-            if(confirm("Clear all website data?")){
-
-                localStorage.clear();
-
-                location.reload();
-
-            }
+            return;
 
         }
 
+        fetch("/api/favorites/clear/" + userId,{
 
-    </script>
+            method:"DELETE"
+
+        })
+
+            .then(response=>{
+
+                if(response.ok){
+
+                    alert("All Favorite Brands Cleared");
+
+                }else{
+
+                    alert("Unable to clear favorites.");
+
+                }
+
+            })
+
+            .catch(error=>{
+
+                console.error(error);
+
+                alert("Server Error");
+
+            });
+
+    }
+
+
+    // =======================================
+    // CLEAR HISTORY
+    // =======================================
+
+    function clearHistory(){
+
+        const userId = localStorage.getItem("userId");
+
+        if(!userId){
+
+            alert("Please Login First");
+
+            return;
+
+        }
+
+        if(!confirm("Are you sure you want to clear all history?")){
+
+            return;
+
+        }
+
+        fetch("/api/history/clear/" + userId,{
+
+            method:"DELETE"
+
+        })
+
+            .then(response=>{
+
+                if(response.ok){
+
+                    alert("History Cleared Successfully");
+
+                }else{
+
+                    alert("Unable to clear history.");
+
+                }
+
+            })
+
+            .catch(error=>{
+
+                console.error(error);
+
+                alert("Server Error");
+
+            });
+
+    }
+
+
+    // =======================================
+    // CLEAR SEARCH HISTORY
+    // =======================================
+
+    function clearSearchHistory(){
+
+        const userId = localStorage.getItem("userId");
+
+        if(!userId){
+
+            alert("Please Login First");
+
+            return;
+
+        }
+
+        if(!confirm("Are you sure you want to clear search history?")){
+
+            return;
+
+        }
+
+        fetch("/api/search/clear/" + userId,{
+
+            method:"DELETE"
+
+        })
+
+            .then(response=>{
+
+                if(response.ok){
+
+                    alert("Search History Cleared");
+
+                }else{
+
+                    alert("Unable to clear search history.");
+
+                }
+
+            })
+
+            .catch(error=>{
+
+                console.error(error);
+
+                alert("Server Error");
+
+            });
+
+    }
+
+
+    // =======================================
+    // CLEAR ALL DATA
+    // =======================================
+
+    function clearAllData(){
+
+        if(!confirm("Are you sure you want to clear all data?")){
+            return;
+        }
+
+        clearFavorites();
+        clearHistory();
+        clearSearchHistory();
+
+        localStorage.clear();
+
+        alert("All Data Cleared Successfully");
+
+        window.location.href="/";
+
+    }
+
+</script>
 
 
 </body>

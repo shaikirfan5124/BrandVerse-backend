@@ -7,6 +7,10 @@ import java.util.List;
 
 public interface HistoryRepository extends JpaRepository<History, Long> {
 
+    // Get history by user
     List<History> findByUserId(Long userId);
+
+    // Clear all history of a user
+    void deleteAllByUserId(Long userId);
 
 }
