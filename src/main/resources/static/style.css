@@ -1918,172 +1918,167 @@ footer{
                 MOBILE (768px)
 =================================================== */
 
-@media screen and (max-width:768px){
+@media screen and (max-width:768px) {
 
     html,
-    body{
-        width:100%;
-        overflow-x:hidden;
+    body {
+        width: 100%;
+        overflow-x: hidden;
     }
 
     /* ---------- TOP SECTION ---------- */
-
-    .top-actions{
-        display:grid;
+    .top-actions {
+        display: grid;
         grid-template-columns:1fr 1fr 1fr;
         grid-template-areas:
             "search search search"
             "trend fav account";
-        gap:10px;
-        width:95%;
-        margin:15px auto;
+        gap: 10px;
+        width: 95%;
+        margin: 15px auto;
     }
 
-    .search-container{
-        grid-area:search;
-        display:flex;
-        gap:8px;
-        width:100%;
+    .search-container {
+        grid-area: search;
+        display: flex;
+        gap: 8px;
+        width: 100%;
     }
 
-    #searchInput{
-        flex:1;
+    #searchInput {
+        flex: 1;
     }
 
-    .search-container button{
-        width:90px;
+    .search-container button {
+        width: 90px;
     }
 
-    .trending-btn{
-        grid-area:trend;
+    .trending-btn {
+        grid-area: trend;
     }
 
-    .favorite-btn{
-        grid-area:fav;
+    .favorite-btn {
+        grid-area: fav;
     }
 
     .account-menu,
-    .account-btn{
-        grid-area:account;
+    .account-btn {
+        grid-area: account;
     }
 
-    .right-actions{
-        display:contents;
+    .right-actions {
+        display: contents;
     }
 
     /* Hide Home Button */
-
     .home-btn,
-    .gohome-btn{
-        display:none !important;
+    .gohome-btn {
+        display: none !important;
     }
 
     /* Suggestions */
-
-    #suggestions{
-        top:250px !important;
-        width:90%;
-        left:50%;
-        transform:translateX(-50%);
+    #suggestions {
+        top: 250px !important;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     /* ==================================
             CATEGORY BOXES
     ================================== */
-
-    .categories{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        gap:16px;
-        padding:16px;
+    .categories {
+        display: grid;
+        grid-template-columns:repeat(2, 1fr);
+        gap: 16px;
+        padding: 16px;
     }
 
-    .category-box{
+    .category-box {
 
-        width:100%;
-        height:190px;
-        min-height:190px;
+        width: 100%;
+        height: 190px;
+        min-height: 190px;
 
-        padding:15px;
+        padding: 15px;
 
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-        border-radius:18px;
-        box-sizing:border-box;
+        border-radius: 18px;
+        box-sizing: border-box;
     }
 
-    .category-box img{
+    .category-box img {
 
-        width:120px;
-        height:120px;
+        width: 120px;
+        height: 120px;
 
-        object-fit:contain;
+        object-fit: contain;
     }
 
-    .category-box h3{
+    .category-box h3 {
 
-        font-size:20px;
-        margin-top:10px;
+        font-size: 20px;
+        margin-top: 10px;
     }
 
     /* ==================================
               BRAND BOXES
     ================================== */
+    .brand-container {
 
-    .brand-container{
+        display: grid;
+        grid-template-columns:repeat(2, 1fr);
 
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-
-        gap:15px;
-        padding:15px;
+        gap: 15px;
+        padding: 15px;
     }
 
-    .brand-box{
+    .brand-box {
 
-        width:100%;
-        height:165px;
+        width: 100%;
+        height: 165px;
 
-        padding:15px;
+        padding: 15px;
 
-        border-radius:16px;
-        box-sizing:border-box;
+        border-radius: 16px;
+        box-sizing: border-box;
 
-        position:relative;
+        position: relative;
     }
 
-    .brand-box img{
+    .brand-box img {
 
-        width:85px;
-        height:85px;
+        width: 85px;
+        height: 85px;
 
-        object-fit:contain;
-        display:block;
-        margin:auto;
+        object-fit: contain;
+        display: block;
+        margin: auto;
     }
 
-    .brand-box h3{
+    .brand-box h3 {
 
-        font-size:15px;
-        margin-top:8px;
+        font-size: 15px;
+        margin-top: 8px;
     }
 
-    .heart-btn{
+    .heart-btn {
 
-        width:40px;
-        height:40px;
+        width: 40px;
+        height: 40px;
 
-        top:8px;
-        right:8px;
+        top: 8px;
+        right: 8px;
 
-        display:flex;
-        align-items:center;
-        justify-content:center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        padding:0;
+        padding: 0;
 
         transform: translate(-2px, 2px);
     }
@@ -2091,46 +2086,57 @@ footer{
     /* ==========================
        FAVORITES - MOBILE
     ========================== */
+    @media screen and (max-width: 768px) {
 
-    @media screen and (max-width:768px){
-
-        #favoritesContainer{
-            display:grid;
-            grid-template-columns:repeat(2,1fr);
-            gap:15px;
-            padding:15px;
+        #favoritesContainer {
+            display: grid;
+            grid-template-columns:repeat(2, 1fr);
+            gap: 15px;
+            padding: 15px;
         }
 
-        #favoritesContainer .brand-box{
-            display:flex;
-            flex-direction:column;
-            align-items:center;
+        #favoritesContainer .brand-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
 
-            height:280px;
-            padding:15px;
-            box-sizing:border-box;
+            height: 260px;
+            padding: 15px;
+            box-sizing: border-box;
+            border-radius: 16px;
         }
 
-        #favoritesContainer img{
-            width:80px;
-            height:80px;
-            object-fit:contain;
-            margin-bottom:10px;
+        #favoritesContainer img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
         }
 
-        #favoritesContainer h3{
-            font-size:15px;
-            text-align:center;
-            margin-bottom:15px;
+        #favoritesContainer h3 {
+            font-size: 15px;
+            text-align: center;
+            margin-bottom: 15px;
         }
 
-        #favoritesContainer button{
-            width:100%;
-            padding:9px;
-            margin-top:8px;
-            border-radius:25px;
+        /* Buttons Row */
+        #favoritesContainer .button-row {
+            display: flex;
+            width: 100%;
+            gap: 8px;
+            margin-top: auto;
         }
-    }}
+
+        #favoritesContainer .button-row button {
+            flex: 1;
+            padding: 9px 0;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+    }
+}
 /* Remove hover effect for Category Boxes */
 .category-box:hover{
     transform:none;
