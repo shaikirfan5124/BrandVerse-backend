@@ -360,19 +360,44 @@
 
     function clearAllData(){
 
+        const userId = localStorage.getItem("userId");
+
+        if(!userId){
+            alert("Please Login First");
+            return;
+        }
+
         if(!confirm("Are you sure you want to clear all data?")){
             return;
         }
 
-        clearFavorites();
-        clearHistory();
-        clearSearchHistory();
+        fetch("/api/users/clear/" + userId,{
+            method:"DELETE"
+        })
+            .then(response=>{
 
-        localStorage.clear();
+                if(response.ok){
 
-        alert("All Data Cleared Successfully");
+                    localStorage.clear();
 
-        window.location.href="/";
+                    alert("All Data Cleared Successfully");
+
+                    window.location.href="/";
+
+                }else{
+
+                    alert("Unable to clear data.");
+
+                }
+
+            })
+            .catch(error=>{
+
+                console.error(error);
+
+                alert("Server Error");
+
+            });
 
     }
 

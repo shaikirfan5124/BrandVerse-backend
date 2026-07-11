@@ -210,7 +210,7 @@
 
                 const favoriteId = button.dataset.favoriteId;
 
-                fetch("http://localhost:8080/api/favorites/" + favoriteId,{
+                fetch("/api/favorites/" + favoriteId,{
 
                     method:"DELETE"
 
@@ -241,7 +241,7 @@
             // ============================
             // Add Favorite
             // ============================
-            fetch("http://localhost:8080/api/favorites", {
+            fetch("/api/favorites", {
 
                 method: "POST",
 
@@ -319,8 +319,7 @@
 
             if (!userId) return;
 
-            fetch("http://localhost:8080/api/favorites/" + userId)
-
+            fetch("/api/favorites/" + userId)
                 .then(response => response.json())
 
                 .then(favorites => {
@@ -367,7 +366,7 @@
 
             const now = new Date();
 
-            fetch("http://localhost:8080/api/history",{
+            fetch("/api/history",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
